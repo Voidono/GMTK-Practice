@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://x63bsbpsldnr"]
+
+[node name="level menu" type="Node2D" unique_id=402522658]
+
+[node name="level 1" type="Button" parent="." unique_id=922160589]
+offset_left = 148.0
+offset_top = 237.0
+offset_right = 315.0
+offset_bottom = 365.0
+text = "1"
+
+[node name="level 2" type="Button" parent="." unique_id=121700113]
+offset_left = 457.0
+offset_top = 237.0
+offset_right = 624.0
+offset_bottom = 365.0
+text = "2"
+
+[node name="level 3" type="Button" parent="." unique_id=1389293741]
+offset_left = 773.0
+offset_top = 240.0
+offset_right = 940.0
+offset_bottom = 368.0
+text = "3"
