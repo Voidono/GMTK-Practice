@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://pg3rwqeox2xi"]
+
+[ext_resource type="Script" uid="uid://q4rix37b2snv" path="res://screen/setting_menu.gd" id="1_0oed2"]
+
+[node name="Node2D" type="Control" unique_id=1181364878]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0oed2")
+
+[node name="HSeparator" type="HSlider" parent="." unique_id=1939506776]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 224.0
+offset_right = 830.0
+offset_bottom = 414.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Label" type="Label" parent="HSeparator" unique_id=590921469]
+layout_mode = 0
+offset_left = -331.0
+offset_top = 31.0
+offset_right = -34.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 58
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=2047852326]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 401.0
+offset_right = 835.0
+offset_bottom = 502.0
+
+[node name="Label" type="Label" parent="OptionButton" unique_id=875288357]
+layout_mode = 0
+offset_left = -296.0
+offset_top = 7.0
+offset_right = -24.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 58
+text = "Language"
+
+[node name="Button" type="Button" parent="." unique_id=330341309]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 82
+text = "X"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2015831447]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
