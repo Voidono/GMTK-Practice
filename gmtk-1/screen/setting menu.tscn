@@ -52,6 +52,4 @@ theme_override_font_sizes/font_size = 82
 text = "X"
 flat = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2015831447]
-
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
