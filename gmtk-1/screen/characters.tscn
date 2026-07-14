@@ -64,6 +64,6 @@ animations = [{
 [node name="Characters" type="Node2D" unique_id=1337117761]
 
 [node name="Flan" type="AnimatedSprite2D" parent="." unique_id=2103552760]
-position = Vector2(0, -2)
+position = Vector2(490, 262)
 sprite_frames = SubResource("SpriteFrames_4wrgo")
 script = ExtResource("8_8d0a2")
