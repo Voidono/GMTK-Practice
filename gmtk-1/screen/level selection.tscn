@@ -1,24 +1,50 @@
 [gd_scene format=3 uid="uid://x63bsbpsldnr"]
 
+[ext_resource type="Texture2D" uid="uid://fjlli3hh8dr4" path="res://res/image/7e8475daa060e23cec1f4a51feb4b4a1.jpg" id="1_b5bpt"]
+[ext_resource type="Texture2D" uid="uid://chhgphejjtx8d" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button text/9patch - green.png" id="2_4vnhj"]
+
 [node name="level menu" type="Node2D" unique_id=402522658]
 
-[node name="level 1" type="Button" parent="." unique_id=922160589]
-offset_left = 148.0
-offset_top = 237.0
-offset_right = 315.0
-offset_bottom = 365.0
+[node name="7e8475Daa060e23Cec1f4a51Feb4b4a1" type="Sprite2D" parent="." unique_id=450583983]
+position = Vector2(481, 267)
+scale = Vector2(1.3043479, 1.3381642)
+texture = ExtResource("1_b5bpt")
+
+[node name="9PatchGreen" type="Sprite2D" parent="." unique_id=2030586430]
+position = Vector2(166.25, 268.75)
+scale = Vector2(0.8560976, 1.3514851)
+texture = ExtResource("2_4vnhj")
+
+[node name="level 1" type="Button" parent="9PatchGreen" unique_id=922160589]
+offset_left = -96.07549
+offset_top = -47.910263
+offset_right = 100.163795
+offset_bottom = 46.06044
 text = "1"
+flat = true
 
-[node name="level 2" type="Button" parent="." unique_id=121700113]
-offset_left = 457.0
-offset_top = 237.0
-offset_right = 624.0
-offset_bottom = 365.0
+[node name="9PatchGreen2" type="Sprite2D" parent="." unique_id=482758587]
+position = Vector2(474.75, 267.25)
+scale = Vector2(0.85121953, 1.3415842)
+texture = ExtResource("2_4vnhj")
+
+[node name="level 2" type="Button" parent="9PatchGreen2" unique_id=121700113]
+offset_left = -96.038666
+offset_top = -47.145752
+offset_right = 97.80084
+offset_bottom = 46.02768
 text = "2"
+flat = true
 
-[node name="level 3" type="Button" parent="." unique_id=1389293741]
-offset_left = 773.0
-offset_top = 240.0
-offset_right = 940.0
-offset_bottom = 368.0
+[node name="9PatchGreen3" type="Sprite2D" parent="." unique_id=41202522]
+position = Vector2(794, 269)
+scale = Vector2(0.85121953, 1.3415842)
+texture = ExtResource("2_4vnhj")
+
+[node name="level 3" type="Button" parent="9PatchGreen3" unique_id=1389293741]
+offset_left = -99.85669
+offset_top = -46.21402
+offset_right = 102.20624
+offset_bottom = 46.95941
 text = "3"
+flat = true

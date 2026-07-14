@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://pg3rwqeox2xi"]
 
+[ext_resource type="Texture2D" uid="uid://4ya3452ir2jm" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="1_g1tpj"]
+[ext_resource type="Texture2D" uid="uid://pu0jwnvwtm32" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button text/9patch - red.png" id="2_pylt6"]
+[ext_resource type="Texture2D" uid="uid://qsegxmqy01jf" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button on-off/X.png" id="2_slce1"]
+
 [sub_resource type="GDScript" id="GDScript_3jyav"]
 script/source = "extends Control
 
@@ -13,6 +17,23 @@ func _on_button_pressed() -> void:
 layout_mode = 3
 anchors_preset = 0
 script = SubResource("GDScript_3jyav")
+
+[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1159836571]
+position = Vector2(479.55554, 272.25)
+scale = Vector2(0.79925925, 0.79925925)
+texture = ExtResource("1_g1tpj")
+
+[node name="9PatchRed" type="Sprite2D" parent="." unique_id=1378011431]
+texture_filter = 1
+position = Vector2(438.25, 318.75)
+scale = Vector2(4.2999997, 1.1336632)
+texture = ExtResource("2_pylt6")
+
+[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=1541392320]
+texture_filter = 1
+position = Vector2(439.62503, 459.625)
+scale = Vector2(4.306098, 1.1955451)
+texture = ExtResource("2_pylt6")
 
 [node name="HSeparator" type="HSlider" parent="." unique_id=1939506776]
 layout_mode = 0
@@ -30,6 +51,7 @@ offset_left = -331.0
 offset_top = 31.0
 offset_right = -34.0
 offset_bottom = 140.0
+theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 58
 text = "Volume"
 horizontal_alignment = 1
@@ -66,6 +88,12 @@ theme_override_font_sizes/font_size = 82
 text = "X"
 flat = true
 
+<<<<<<< Updated upstream
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2015831447]
+=======
+[node name="X" type="Sprite2D" parent="Button" unique_id=178404766]
+position = Vector2(52, 65)
+texture = ExtResource("2_slce1")
+>>>>>>> Stashed changes
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
