@@ -1,65 +1,68 @@
 [gd_scene format=3 uid="uid://i4lvenyviqm3"]
 
 [ext_resource type="Script" uid="uid://omca6fqhohbf" path="res://script/menu.gd" id="1_i86ad"]
-[ext_resource type="Texture2D" uid="uid://4ya3452ir2jm" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="2_atih0"]
-[ext_resource type="Texture2D" uid="uid://pu0jwnvwtm32" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button text/9patch - red.png" id="3_at1li"]
-[ext_resource type="Texture2D" uid="uid://7ga4lkaqoe75" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/button Links/X-twiter.png" id="4_ytsew"]
-[ext_resource type="Texture2D" uid="uid://cbj4jvpbad4kq" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/button Links/Discord.png" id="5_lsgkf"]
+[ext_resource type="Texture2D" uid="uid://b4b5etk8d2hpy" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="2_atih0"]
+[ext_resource type="Texture2D" uid="uid://bqaraxhd4uqd2" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_at1li"]
+[ext_resource type="Texture2D" uid="uid://25rsgt2j3ar" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_ytsew"]
+[ext_resource type="Texture2D" uid="uid://dd58miq6n87ne" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_lsgkf"]
 
 [node name="Menu" type="Node2D" unique_id=998409396]
 script = ExtResource("1_i86ad")
-metadata/_edit_vertical_guides_ = [69.0]
+metadata/_edit_vertical_guides_ = [36.0]
 
-[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1231559580]
-position = Vector2(479.55554, 272.25)
-scale = Vector2(0.79925925, 0.79925925)
+[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=312421132]
+position = Vector2(481.66666, 268.75)
+scale = Vector2(0.7977778, 0.7977778)
 texture = ExtResource("2_atih0")
 
-[node name="9PatchRed" type="Sprite2D" parent="." unique_id=565207496]
-position = Vector2(173, 206)
+[node name="9PatchRed" type="Sprite2D" parent="." unique_id=1131680664]
+position = Vector2(153.37747, 207.625)
+scale = Vector2(0.89387834, 0.9381188)
 texture = ExtResource("3_at1li")
 
 [node name="Button" type="Button" parent="9PatchRed" unique_id=355843566]
-offset_left = -97.0
-offset_top = -44.0
-offset_right = 97.0
-offset_bottom = 39.0
+offset_left = -93.69363
+offset_top = -44.697876
+offset_right = 93.69361
+offset_bottom = 38.302124
 theme_override_font_sizes/font_size = 29
 text = "Play"
 flat = true
 
-[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=1713736912]
-position = Vector2(171, 332)
+[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=887695618]
+position = Vector2(152.87747, 333.625)
+scale = Vector2(0.8890003, 0.87871283)
 texture = ExtResource("3_at1li")
 
 [node name="Button2" type="Button" parent="9PatchRed2" unique_id=1210662623]
-offset_left = -97.0
-offset_top = -39.0
-offset_right = 100.0
-offset_bottom = 44.0
+offset_left = -92.834045
+offset_top = -42.97873
+offset_right = 97.13191
+offset_bottom = 40.02127
 theme_override_font_sizes/font_size = 23
 text = "Setting"
 flat = true
 
-[node name="9PatchRed3" type="Sprite2D" parent="." unique_id=266452971]
-position = Vector2(171, 472)
+[node name="9PatchRed3" type="Sprite2D" parent="." unique_id=1065719209]
+position = Vector2(153.37747, 458.125)
+scale = Vector2(0.88412213, 0.7896039)
 texture = ExtResource("3_at1li")
 
 [node name="Button3" type="Button" parent="9PatchRed3" unique_id=1854956447]
-offset_left = -98.0
-offset_top = -46.0
-offset_right = 96.0
-offset_bottom = 45.0
+offset_left = -92.834045
+offset_top = -39.540436
+offset_right = 97.13191
+offset_bottom = 43.459564
 theme_override_font_sizes/font_size = 23
 text = "Exit"
 flat = true
 
-[node name="XTwiter" type="Sprite2D" parent="." unique_id=1753272816]
-position = Vector2(892, 491)
+[node name="Discord" type="Sprite2D" parent="." unique_id=1879825278]
+position = Vector2(770, 485)
 texture = ExtResource("4_ytsew")
 
-[node name="Discord" type="Sprite2D" parent="." unique_id=2028079692]
-position = Vector2(782, 493)
+[node name="XTwiter" type="Sprite2D" parent="." unique_id=2005850674]
+position = Vector2(882, 480)
 texture = ExtResource("5_lsgkf")
 
 [connection signal="pressed" from="9PatchRed/Button" to="." method="_on_button_pressed"]

@@ -1,50 +1,70 @@
 [gd_scene format=3 uid="uid://x63bsbpsldnr"]
 
-[ext_resource type="Texture2D" uid="uid://fjlli3hh8dr4" path="res://res/image/7e8475daa060e23cec1f4a51feb4b4a1.jpg" id="1_b5bpt"]
-[ext_resource type="Texture2D" uid="uid://chhgphejjtx8d" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button text/9patch - green.png" id="2_4vnhj"]
+[ext_resource type="Script" uid="uid://omca6fqhohbf" path="res://script/menu.gd" id="1_s4hk6"]
+[ext_resource type="Texture2D" uid="uid://b4b5etk8d2hpy" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="2_etrla"]
+[ext_resource type="Texture2D" uid="uid://bqaraxhd4uqd2" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_a5aqh"]
+[ext_resource type="Texture2D" uid="uid://25rsgt2j3ar" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_xitoy"]
+[ext_resource type="Texture2D" uid="uid://dd58miq6n87ne" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_x4ngo"]
 
-[node name="level menu" type="Node2D" unique_id=402522658]
+[node name="Menu" type="Node2D" unique_id=998409396]
+script = ExtResource("1_s4hk6")
+metadata/_edit_vertical_guides_ = [36.0]
 
-[node name="7e8475Daa060e23Cec1f4a51Feb4b4a1" type="Sprite2D" parent="." unique_id=450583983]
-position = Vector2(481, 267)
-scale = Vector2(1.3043479, 1.3381642)
-texture = ExtResource("1_b5bpt")
+[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=312421132]
+position = Vector2(481.66666, 268.75)
+scale = Vector2(0.7977778, 0.7977778)
+texture = ExtResource("2_etrla")
 
-[node name="9PatchGreen" type="Sprite2D" parent="." unique_id=2030586430]
-position = Vector2(166.25, 268.75)
-scale = Vector2(0.8560976, 1.3514851)
-texture = ExtResource("2_4vnhj")
+[node name="9PatchRed" type="Sprite2D" parent="." unique_id=1131680664]
+position = Vector2(153.37747, 207.625)
+scale = Vector2(0.89387834, 0.9381188)
+texture = ExtResource("3_a5aqh")
 
-[node name="level 1" type="Button" parent="9PatchGreen" unique_id=922160589]
-offset_left = -96.07549
-offset_top = -47.910263
-offset_right = 100.163795
-offset_bottom = 46.06044
-text = "1"
+[node name="Button" type="Button" parent="9PatchRed" unique_id=355843566]
+offset_left = -93.69363
+offset_top = -44.697876
+offset_right = 93.69361
+offset_bottom = 38.302124
+theme_override_font_sizes/font_size = 29
+text = "Play"
 flat = true
 
-[node name="9PatchGreen2" type="Sprite2D" parent="." unique_id=482758587]
-position = Vector2(474.75, 267.25)
-scale = Vector2(0.85121953, 1.3415842)
-texture = ExtResource("2_4vnhj")
+[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=887695618]
+position = Vector2(152.87747, 333.625)
+scale = Vector2(0.8890003, 0.87871283)
+texture = ExtResource("3_a5aqh")
 
-[node name="level 2" type="Button" parent="9PatchGreen2" unique_id=121700113]
-offset_left = -96.038666
-offset_top = -47.145752
-offset_right = 97.80084
-offset_bottom = 46.02768
-text = "2"
+[node name="Button2" type="Button" parent="9PatchRed2" unique_id=1210662623]
+offset_left = -92.834045
+offset_top = -42.97873
+offset_right = 97.13191
+offset_bottom = 40.02127
+theme_override_font_sizes/font_size = 23
+text = "Setting"
 flat = true
 
-[node name="9PatchGreen3" type="Sprite2D" parent="." unique_id=41202522]
-position = Vector2(794, 269)
-scale = Vector2(0.85121953, 1.3415842)
-texture = ExtResource("2_4vnhj")
+[node name="9PatchRed3" type="Sprite2D" parent="." unique_id=1065719209]
+position = Vector2(153.37747, 458.125)
+scale = Vector2(0.88412213, 0.7896039)
+texture = ExtResource("3_a5aqh")
 
-[node name="level 3" type="Button" parent="9PatchGreen3" unique_id=1389293741]
-offset_left = -99.85669
-offset_top = -46.21402
-offset_right = 102.20624
-offset_bottom = 46.95941
-text = "3"
+[node name="Button3" type="Button" parent="9PatchRed3" unique_id=1854956447]
+offset_left = -92.834045
+offset_top = -39.540436
+offset_right = 97.13191
+offset_bottom = 43.459564
+theme_override_font_sizes/font_size = 23
+text = "Exit"
 flat = true
+
+[node name="Discord" type="Sprite2D" parent="." unique_id=1879825278]
+position = Vector2(770, 485)
+texture = ExtResource("4_xitoy")
+
+[node name="XTwiter" type="Sprite2D" parent="." unique_id=2005850674]
+position = Vector2(882, 480)
+texture = ExtResource("5_x4ngo")
+
+[connection signal="pressed" from="9PatchRed/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="9PatchRed2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="9PatchRed3/Button3" to="." method="_on_button_3_pressed"]

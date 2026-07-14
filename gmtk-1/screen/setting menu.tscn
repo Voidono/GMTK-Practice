@@ -1,99 +1,70 @@
 [gd_scene format=3 uid="uid://pg3rwqeox2xi"]
 
-[ext_resource type="Texture2D" uid="uid://4ya3452ir2jm" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="1_g1tpj"]
-[ext_resource type="Texture2D" uid="uid://pu0jwnvwtm32" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button text/9patch - red.png" id="2_pylt6"]
-[ext_resource type="Texture2D" uid="uid://qsegxmqy01jf" path="res://res/texture 1/Game UI Assets/Game UI Assets/Button/Button on-off/X.png" id="2_slce1"]
+[ext_resource type="Script" uid="uid://omca6fqhohbf" path="res://script/menu.gd" id="1_fnc0o"]
+[ext_resource type="Texture2D" uid="uid://b4b5etk8d2hpy" path="res://res/image/review-umamusume-pretty-derby-suc-hap-dan-khong-choi-tu.jpg" id="1_g1tpj"]
+[ext_resource type="Texture2D" uid="uid://bqaraxhd4uqd2" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_of3pv"]
+[ext_resource type="Texture2D" uid="uid://25rsgt2j3ar" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_6dkgc"]
+[ext_resource type="Texture2D" uid="uid://dd58miq6n87ne" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_tolmd"]
 
-[sub_resource type="GDScript" id="GDScript_3jyav"]
-script/source = "extends Control
+[node name="Menu" type="Node2D" unique_id=998409396]
+script = ExtResource("1_fnc0o")
+metadata/_edit_vertical_guides_ = [36.0]
 
-
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://screen/menu.tscn\")
-	pass # Replace with function body.
-"
-
-[node name="Node2D" type="Control" unique_id=1181364878]
-layout_mode = 3
-anchors_preset = 0
-script = SubResource("GDScript_3jyav")
-
-[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1159836571]
-position = Vector2(479.55554, 272.25)
-scale = Vector2(0.79925925, 0.79925925)
+[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=312421132]
+position = Vector2(481.66666, 268.75)
+scale = Vector2(0.7977778, 0.7977778)
 texture = ExtResource("1_g1tpj")
 
-[node name="9PatchRed" type="Sprite2D" parent="." unique_id=1378011431]
-texture_filter = 1
-position = Vector2(438.25, 318.75)
-scale = Vector2(4.2999997, 1.1336632)
-texture = ExtResource("2_pylt6")
+[node name="9PatchRed" type="Sprite2D" parent="." unique_id=1131680664]
+position = Vector2(153.37747, 207.625)
+scale = Vector2(0.89387834, 0.9381188)
+texture = ExtResource("3_of3pv")
 
-[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=1541392320]
-texture_filter = 1
-position = Vector2(439.62503, 459.625)
-scale = Vector2(4.306098, 1.1955451)
-texture = ExtResource("2_pylt6")
-
-[node name="HSeparator" type="HSlider" parent="." unique_id=1939506776]
-layout_mode = 0
-offset_left = 321.0
-offset_top = 224.0
-offset_right = 830.0
-offset_bottom = 414.0
-max_value = 1.0
-step = 0.001
-value = 1.0
-
-[node name="Label" type="Label" parent="HSeparator" unique_id=590921469]
-layout_mode = 0
-offset_left = -331.0
-offset_top = 31.0
-offset_right = -34.0
-offset_bottom = 140.0
-theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 58
-text = "Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OptionButton" type="OptionButton" parent="." unique_id=2047852326]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 401.0
-offset_right = 835.0
-offset_bottom = 502.0
-theme_override_font_sizes/font_size = 54
-selected = 0
-item_count = 2
-popup/item_0/text = "English"
-popup/item_0/id = 0
-popup/item_1/text = "Tiếng Việt"
-popup/item_1/id = 1
-
-[node name="Label" type="Label" parent="OptionButton" unique_id=875288357]
-layout_mode = 0
-offset_left = -296.0
-offset_top = 7.0
-offset_right = -24.0
-offset_bottom = 116.0
-theme_override_font_sizes/font_size = 58
-text = "Language"
-
-[node name="Button" type="Button" parent="." unique_id=330341309]
-layout_mode = 0
-offset_right = 126.0
-offset_bottom = 102.0
-theme_override_font_sizes/font_size = 82
-text = "X"
+[node name="Button" type="Button" parent="9PatchRed" unique_id=355843566]
+offset_left = -93.69363
+offset_top = -44.697876
+offset_right = 93.69361
+offset_bottom = 38.302124
+theme_override_font_sizes/font_size = 29
+text = "Play"
 flat = true
 
-<<<<<<< Updated upstream
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2015831447]
-=======
-[node name="X" type="Sprite2D" parent="Button" unique_id=178404766]
-position = Vector2(52, 65)
-texture = ExtResource("2_slce1")
->>>>>>> Stashed changes
+[node name="9PatchRed2" type="Sprite2D" parent="." unique_id=887695618]
+position = Vector2(152.87747, 333.625)
+scale = Vector2(0.8890003, 0.87871283)
+texture = ExtResource("3_of3pv")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Button2" type="Button" parent="9PatchRed2" unique_id=1210662623]
+offset_left = -92.834045
+offset_top = -42.97873
+offset_right = 97.13191
+offset_bottom = 40.02127
+theme_override_font_sizes/font_size = 23
+text = "Setting"
+flat = true
+
+[node name="9PatchRed3" type="Sprite2D" parent="." unique_id=1065719209]
+position = Vector2(153.37747, 458.125)
+scale = Vector2(0.88412213, 0.7896039)
+texture = ExtResource("3_of3pv")
+
+[node name="Button3" type="Button" parent="9PatchRed3" unique_id=1854956447]
+offset_left = -92.834045
+offset_top = -39.540436
+offset_right = 97.13191
+offset_bottom = 43.459564
+theme_override_font_sizes/font_size = 23
+text = "Exit"
+flat = true
+
+[node name="Discord" type="Sprite2D" parent="." unique_id=1879825278]
+position = Vector2(770, 485)
+texture = ExtResource("4_6dkgc")
+
+[node name="XTwiter" type="Sprite2D" parent="." unique_id=2005850674]
+position = Vector2(882, 480)
+texture = ExtResource("5_tolmd")
+
+[connection signal="pressed" from="9PatchRed/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="9PatchRed2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="9PatchRed3/Button3" to="." method="_on_button_3_pressed"]
