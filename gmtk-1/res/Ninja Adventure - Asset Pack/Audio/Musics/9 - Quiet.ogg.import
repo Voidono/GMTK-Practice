@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2d86slhkhcm0"
+path="res://.godot/imported/9 - Quiet.ogg-1f4378ca8f3e5cefcfe3bfb437888df8.oggvorbisstr"
+
+[deps]
+
+source_file="res://res/Ninja Adventure - Asset Pack/Audio/Musics/9 - Quiet.ogg"
+dest_files=["res://.godot/imported/9 - Quiet.ogg-1f4378ca8f3e5cefcfe3bfb437888df8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

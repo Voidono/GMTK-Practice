@@ -1,24 +1,29 @@
 [gd_scene format=3 uid="uid://x63bsbpsldnr"]
 
+[ext_resource type="Script" uid="uid://dkm32xcajnra6" path="res://screen/level_selection.gd" id="1_x7c51"]
+
 [node name="level menu" type="Node2D" unique_id=402522658]
+script = ExtResource("1_x7c51")
 
 [node name="level 1" type="Button" parent="." unique_id=922160589]
-offset_left = 148.0
-offset_top = 237.0
-offset_right = 315.0
-offset_bottom = 365.0
+offset_left = 96.0
+offset_top = 207.0
+offset_right = 263.0
+offset_bottom = 335.0
 text = "1"
 
 [node name="level 2" type="Button" parent="." unique_id=121700113]
-offset_left = 457.0
-offset_top = 237.0
-offset_right = 624.0
-offset_bottom = 365.0
+offset_left = 405.0
+offset_top = 207.0
+offset_right = 572.0
+offset_bottom = 335.0
 text = "2"
 
 [node name="level 3" type="Button" parent="." unique_id=1389293741]
-offset_left = 773.0
-offset_top = 240.0
-offset_right = 940.0
-offset_bottom = 368.0
+offset_left = 721.0
+offset_top = 210.0
+offset_right = 888.0
+offset_bottom = 338.0
 text = "3"
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
