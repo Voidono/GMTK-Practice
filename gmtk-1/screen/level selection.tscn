@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://25rsgt2j3ar" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_xitoy"]
 [ext_resource type="Texture2D" uid="uid://dd58miq6n87ne" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_x4ngo"]
 
+<<<<<<< Updated upstream
 [node name="Menu" type="Node2D" unique_id=998409396]
 script = ExtResource("1_s4hk6")
 metadata/_edit_vertical_guides_ = [36.0]
@@ -68,3 +69,25 @@ texture = ExtResource("5_x4ngo")
 [connection signal="pressed" from="9PatchRed/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="9PatchRed2/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="9PatchRed3/Button3" to="." method="_on_button_3_pressed"]
+=======
+[node name="level 1" type="Button" parent="." unique_id=922160589]
+offset_left = 68.0
+offset_top = 191.0
+offset_right = 235.0
+offset_bottom = 319.0
+text = "1"
+
+[node name="level 2" type="Button" parent="." unique_id=121700113]
+offset_left = 377.0
+offset_top = 191.0
+offset_right = 544.0
+offset_bottom = 319.0
+text = "2"
+
+[node name="level 3" type="Button" parent="." unique_id=1389293741]
+offset_left = 693.0
+offset_top = 194.0
+offset_right = 860.0
+offset_bottom = 322.0
+text = "3"
+>>>>>>> Stashed changes
