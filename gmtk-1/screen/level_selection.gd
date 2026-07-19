@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://screen/map1.tscn")
 	pass # Replace with function body.
+
+
+func _on_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://screen/menu.tscn")
+	pass # Replace with function body.

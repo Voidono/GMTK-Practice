@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://c1emwqxalwiqk" path="res://script/State/IdleState.gd" id="10_vupfv"]
 [ext_resource type="Script" uid="uid://cotdyiqs6qpj2" path="res://script/State/WalkState.gd" id="11_03ymn"]
 [ext_resource type="PackedScene" uid="uid://bgt32moobadj8" path="res://screen/Enemy.tscn" id="13_03ymn"]
+[ext_resource type="Texture2D" uid="uid://cx04f7miot2pn" path="res://res/texture 1/Game UI Assets/Button/Button icon/menu.png" id="13_ey4eq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
 animations = [{
@@ -73,6 +74,7 @@ radius = 17.117243
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=775815707 groups=["player"]]
 
 [node name="Flan" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2103552760]
+texture_filter = 1
 position = Vector2(474, 263)
 sprite_frames = SubResource("SpriteFrames_4wrgo")
 script = ExtResource("8_8d0a2")
@@ -106,8 +108,26 @@ position = Vector2(191, 300)
 [node name="Enemy4" parent="CharacterBody2D" unique_id=1138021602 instance=ExtResource("13_03ymn")]
 position = Vector2(-56, 215)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1866042822]
+position = Vector2(472, 264)
+zoom = Vector2(2.13, 2.13)
+
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D" unique_id=39592991]
+offset_left = -217.0
+offset_top = -119.0
+offset_right = -194.0
+offset_bottom = -96.0
+flat = true
+
+[node name="Menu" type="Sprite2D" parent="CharacterBody2D/Camera2D/Button" unique_id=944881762]
+position = Vector2(12, 12)
+scale = Vector2(0.24999996, 0.24999996)
+texture = ExtResource("13_ey4eq")
+
 [node name="Enemy" parent="." unique_id=2087722262 instance=ExtResource("13_03ymn")]
 position = Vector2(509, 52)
 
 [node name="Enemy2" parent="." unique_id=1299075938 instance=ExtResource("13_03ymn")]
 position = Vector2(-250, 70)
+
+[connection signal="pressed" from="CharacterBody2D/Camera2D/Button" to="CharacterBody2D/Flan" method="_on_button_pressed"]

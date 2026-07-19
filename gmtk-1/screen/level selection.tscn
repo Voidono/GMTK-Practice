@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://x63bsbpsldnr"]
 
 [ext_resource type="Script" uid="uid://dkm32xcajnra6" path="res://screen/level_selection.gd" id="1_x7c51"]
+[ext_resource type="Texture2D" uid="uid://cdqevhhsuyyi3" path="res://res/texture 1/Game UI Assets/Button/Button icon/Home.png" id="2_b5bpt"]
 
 [node name="level menu" type="Node2D" unique_id=402522658]
 script = ExtResource("1_x7c51")
@@ -26,4 +27,18 @@ offset_right = 888.0
 offset_bottom = 338.0
 text = "3"
 
+[node name="home" type="Button" parent="." unique_id=347942729]
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 69.0
+offset_bottom = 67.0
+flat = true
+
+[node name="Home" type="Sprite2D" parent="home" unique_id=1616770912]
+texture_filter = 1
+position = Vector2(22, 21.999992)
+scale = Vector2(0.53571427, 0.53571427)
+texture = ExtResource("2_b5bpt")
+
 [connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

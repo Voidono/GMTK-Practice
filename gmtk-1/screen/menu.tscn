@@ -11,15 +11,18 @@ script = ExtResource("1_i86ad")
 metadata/_edit_vertical_guides_ = [36.0]
 
 [node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1774177273]
+texture_filter = 1
 position = Vector2(482, 264.25)
 scale = Vector2(0.79333335, 0.79333335)
 texture = ExtResource("2_atih0")
 
 [node name="9PatchRed" type="Sprite2D" parent="." unique_id=1061146359]
+texture_filter = 1
 position = Vector2(139, 183)
 texture = ExtResource("3_at1li")
 
 [node name="Button" type="Button" parent="9PatchRed" unique_id=355843566]
+texture_filter = 1
 offset_left = -96.0
 offset_top = -45.0
 offset_right = 93.0
@@ -27,12 +30,15 @@ offset_bottom = 38.0
 theme_override_font_sizes/font_size = 29
 text = "Play"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="9PatchRed2" type="Sprite2D" parent="." unique_id=1514951720]
+texture_filter = 1
 position = Vector2(140, 323)
 texture = ExtResource("3_at1li")
 
 [node name="Button2" type="Button" parent="9PatchRed2" unique_id=1210662623]
+texture_filter = 1
 offset_left = -100.0
 offset_top = -52.0
 offset_right = 98.0
@@ -40,12 +46,15 @@ offset_bottom = 45.0
 theme_override_font_sizes/font_size = 23
 text = "Setting"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="9PatchRed3" type="Sprite2D" parent="." unique_id=629171470]
+texture_filter = 1
 position = Vector2(142, 456)
 texture = ExtResource("3_at1li")
 
 [node name="Button3" type="Button" parent="9PatchRed3" unique_id=1854956447]
+texture_filter = 1
 offset_left = -99.0
 offset_top = -52.0
 offset_right = 100.0
@@ -53,12 +62,15 @@ offset_bottom = 46.0
 theme_override_font_sizes/font_size = 23
 text = "Exit"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Discord" type="Sprite2D" parent="." unique_id=839227108]
+texture_filter = 1
 position = Vector2(784, 485)
 texture = ExtResource("4_ytsew")
 
 [node name="XTwiter" type="Sprite2D" parent="." unique_id=771786928]
+texture_filter = 1
 position = Vector2(894, 486)
 texture = ExtResource("5_lsgkf")
 
