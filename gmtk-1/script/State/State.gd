@@ -3,6 +3,8 @@ extends Node
 
 var state_machine: StateMachine
 
+signal transition_requested(next_state: State)
+
 func handle_input(_event: InputEvent) -> void:
 	pass
 

@@ -19,12 +19,20 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://dvnlcxhckcc4q"
 
+[autoload]
+
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [global_group]
 

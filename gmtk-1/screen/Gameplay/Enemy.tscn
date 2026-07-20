@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bgt32moobadj8"]
+
+[ext_resource type="Texture2D" uid="uid://bbn8fkanvxwyo" path="res://res/image/4b7e922d18db84c63ead008d9919f7dc.jpg" id="1_5gsak"]
+[ext_resource type="Script" uid="uid://d3y533mpf377y" path="res://script/enemy.gd" id="1_a048r"]
+[ext_resource type="Script" uid="uid://dnvhijtdxqohh" path="res://script/Health.gd" id="3_blc67"]
+[ext_resource type="Script" uid="uid://dorkf8bsby5dm" path="res://script/State/ChaseState.gd" id="4_bm7jt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wrgo"]
+size = Vector2(80, 181)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=493549651 node_paths=PackedStringArray("health")]
+script = ExtResource("1_a048r")
+health = NodePath("Health")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=172597271]
+position = Vector2(-1.75, 5.903839)
+scale = Vector2(0.1610054, 0.1610054)
+texture = ExtResource("1_5gsak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183801359]
+position = Vector2(-4.5, 4.515625)
+shape = SubResource("RectangleShape2D_4wrgo")
+
+[node name="Health" type="Node" parent="." unique_id=772346872]
+script = ExtResource("3_blc67")
+max_health = 50
+
+[node name="Chase" type="Node" parent="." unique_id=1525840493]
+script = ExtResource("4_bm7jt")

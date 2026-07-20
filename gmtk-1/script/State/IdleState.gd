@@ -1,7 +1,14 @@
+class_name PlayerStateIdle
 extends State
-class_name IdleState
+## Node name in the tree must be "Idle".
+## NOTE: AutoAimShoot now fires continuously (with or without an enemy
+## present), so it no longer transitions back here automatically. This
+## state is kept around only if you want somewhere to send the player
+## manually (e.g. transitioned.emit(self, "idle") on death/cutscene/etc).
+## If you don't need that, just set the StateMachine's initial_state to
+## AutoAimShoot directly and you can delete this file.
 
-func handle_input(_event: InputEvent) -> void:
-	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
-		state_machine.change_state("WalkState")
-	pass
+var player: Player
+
+func enter() -> void:
+	player = state_machine.get_parent() as Player
