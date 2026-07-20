@@ -1,27 +1,8 @@
 [gd_scene format=3 uid="uid://bon5pxrnrur56"]
 
 [ext_resource type="PackedScene" uid="uid://dflhb72afu7e3" path="res://screen/Gameplay/Player.tscn" id="1_s0hea"]
-[ext_resource type="PackedScene" uid="uid://bgt32moobadj8" path="res://screen/Gameplay/Enemy.tscn" id="2_146xj"]
 
 [node name="Node2D" type="Node2D" unique_id=1976260712]
 
 [node name="CharacterBody2D" parent="." unique_id=775815707 instance=ExtResource("1_s0hea")]
 position = Vector2(203, 140)
-
-[node name="Enemy" parent="." unique_id=493549651 instance=ExtResource("2_146xj")]
-position = Vector2(802, 202)
-
-[node name="Enemy2" parent="." unique_id=631837995 instance=ExtResource("2_146xj")]
-position = Vector2(654, 92)
-
-[node name="Enemy3" parent="." unique_id=31330653 instance=ExtResource("2_146xj")]
-position = Vector2(630, 224)
-
-[node name="Enemy4" parent="." unique_id=971078989 instance=ExtResource("2_146xj")]
-position = Vector2(542, 111)
-
-[node name="Enemy5" parent="." unique_id=1031153008 instance=ExtResource("2_146xj")]
-position = Vector2(420, 230)
-
-[node name="Enemy6" parent="." unique_id=1811000700 instance=ExtResource("2_146xj")]
-position = Vector2(374, 62)

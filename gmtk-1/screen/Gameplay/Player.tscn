@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://sc2layedesau" path="res://script/State/ReloadState.gd" id="4_3dh33"]
 [ext_resource type="Script" uid="uid://bg77fekg6akef" path="res://flan.gd" id="9_1hqo3"]
 [ext_resource type="Script" uid="uid://cafi4avmtrisk" path="res://script/State/StateMachine.gd" id="10_7vj8n"]
+[ext_resource type="Script" uid="uid://b4k2gyab62s6v" path="res://script/EnemySpawner.gd" id="10_ahu3t"]
+[ext_resource type="PackedScene" uid="uid://bgt32moobadj8" path="res://screen/Gameplay/Enemy.tscn" id="11_k17sa"]
 [ext_resource type="Script" uid="uid://dwjceweqdd6fa" path="res://script/Targeting.gd" id="12_c2qy3"]
 [ext_resource type="Texture2D" uid="uid://7clygj8jgn87" path="res://res/image/103014292_p0_master1200.jpg-autosave.png" id="13_hvlqb"]
 [ext_resource type="Script" uid="uid://dcx3kscgpqsxd" path="res://script/State/EngageState.gd" id="13_i3kcc"]
@@ -69,3 +71,7 @@ magazine_size = 30
 position = Vector2(2.593749, 0.40624946)
 scale = Vector2(0.10507812, 0.10507812)
 texture = ExtResource("13_hvlqb")
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1457520897]
+script = ExtResource("10_ahu3t")
+enemy_scene = ExtResource("11_k17sa")

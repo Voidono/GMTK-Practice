@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wrgo"]
 size = Vector2(54, 93)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=493549651 node_paths=PackedStringArray("health")]
+[node name="Enemy" type="CharacterBody2D" unique_id=493549651 node_paths=PackedStringArray("health") groups=["enemy"]]
 collision_layer = 2
 script = ExtResource("1_a048r")
 health = NodePath("StateMachine/Health")

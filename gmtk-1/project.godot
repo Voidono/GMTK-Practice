@@ -38,6 +38,7 @@ enabled=PackedStringArray()
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 
