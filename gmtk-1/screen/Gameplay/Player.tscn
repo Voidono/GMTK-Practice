@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://dflhb72afu7e3"]
 
-[ext_resource type="Script" uid="uid://b1efpj2buct8t" path="res://script/Player.gd" id="1_i3kcc"]
+[ext_resource type="Script" uid="uid://gscklm1tfp1p" path="res://script/Player.gd" id="1_i3kcc"]
 [ext_resource type="Texture2D" uid="uid://vww5mwltj5sy" path="res://res/Player/Flandre_down_1.png" id="2_mkrjl"]
 [ext_resource type="Texture2D" uid="uid://831eas7greo4" path="res://res/Player/Flandre_down_2.png" id="3_b5srv"]
 [ext_resource type="Texture2D" uid="uid://cmc0sga4r7fil" path="res://res/Player/Flandre_left_1.png" id="4_2btri"]
-[ext_resource type="Script" uid="uid://usahpfx26la" path="res://script/State/ReloadState.gd" id="4_3dh33"]
+[ext_resource type="Script" uid="uid://sc2layedesau" path="res://script/State/ReloadState.gd" id="4_3dh33"]
 [ext_resource type="Texture2D" uid="uid://dnsgjvuxhdt54" path="res://res/Player/Flandre_left_2.png" id="5_udgp1"]
 [ext_resource type="Texture2D" uid="uid://cqcjpplwyoupb" path="res://res/Player/Flandre_right_1.png" id="6_t18vc"]
 [ext_resource type="Texture2D" uid="uid://byjvldeo0npt2" path="res://res/Player/Flandre_right_2.png" id="7_0nebs"]
 [ext_resource type="Texture2D" uid="uid://b0w2x42om143p" path="res://res/Player/Flandre_up_1.png" id="8_0x5qb"]
 [ext_resource type="Script" uid="uid://bg77fekg6akef" path="res://flan.gd" id="9_1hqo3"]
 [ext_resource type="Script" uid="uid://cafi4avmtrisk" path="res://script/State/StateMachine.gd" id="10_7vj8n"]
-[ext_resource type="Script" uid="uid://daxc85s3mg474" path="res://script/Targeting.gd" id="12_c2qy3"]
-[ext_resource type="Texture2D" uid="uid://xu6occ8lahj0" path="res://res/image/103014292_p0_master1200.jpg-autosave.png" id="13_hvlqb"]
-[ext_resource type="Script" uid="uid://djcqk31y4evvl" path="res://script/State/EngageState.gd" id="13_i3kcc"]
-[ext_resource type="Script" uid="uid://dy15l8dcr8rjs" path="res://script/Gun.gd" id="14_b5srv"]
+[ext_resource type="Script" uid="uid://dwjceweqdd6fa" path="res://script/Targeting.gd" id="12_c2qy3"]
+[ext_resource type="Texture2D" uid="uid://7clygj8jgn87" path="res://res/image/103014292_p0_master1200.jpg-autosave.png" id="13_hvlqb"]
+[ext_resource type="Script" uid="uid://dcx3kscgpqsxd" path="res://script/State/EngageState.gd" id="13_i3kcc"]
+[ext_resource type="Script" uid="uid://c6f6dwpvyr25a" path="res://script/Gun.gd" id="14_b5srv"]
+[ext_resource type="PackedScene" uid="uid://dkcpe3wigumoy" path="res://screen/Gameplay/Bullet.tscn" id="15_2btri"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
 animations = [{
@@ -72,6 +73,7 @@ animations = [{
 radius = 17.117243
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=775815707 groups=["player"]]
+collision_mask = 2
 script = ExtResource("1_i3kcc")
 
 [node name="Flan" type="AnimatedSprite2D" parent="." unique_id=2103552760]
@@ -86,21 +88,28 @@ shape = SubResource("CircleShape2D_4wrgo")
 [node name="Targeting" type="Node2D" parent="." unique_id=190316023]
 script = ExtResource("12_c2qy3")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1832184112]
+[node name="StateMachine" type="Node" parent="." unique_id=1832184112 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("10_7vj8n")
+initial_state = NodePath("Engage")
 metadata/_custom_type_script = "uid://cafi4avmtrisk"
 
-[node name="Reload" type="Node" parent="StateMachine" unique_id=190301855]
+[node name="Reload" type="Node" parent="StateMachine" unique_id=190301855 node_paths=PackedStringArray("gun", "engage_state")]
 script = ExtResource("4_3dh33")
-metadata/_custom_type_script = "uid://usahpfx26la"
+gun = NodePath("../../Muzzle")
+engage_state = NodePath("../Engage")
 
-[node name="Engage" type="Node" parent="StateMachine" unique_id=193625848]
+[node name="Engage" type="Node" parent="StateMachine" unique_id=193625848 node_paths=PackedStringArray("gun", "targeting", "player", "reload_state")]
 script = ExtResource("13_i3kcc")
-metadata/_custom_type_script = "uid://djcqk31y4evvl"
+gun = NodePath("../../Muzzle")
+targeting = NodePath("../../Targeting")
+player = NodePath("../..")
+reload_state = NodePath("../Reload")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=318796674]
 position = Vector2(11, 2)
 script = ExtResource("14_b5srv")
+bullet_scene = ExtResource("15_2btri")
+magazine_size = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="Muzzle" unique_id=1016465916]
 position = Vector2(2.593749, 0.40624946)
