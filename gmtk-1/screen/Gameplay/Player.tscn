@@ -1,14 +1,7 @@
 [gd_scene format=3 uid="uid://dflhb72afu7e3"]
 
 [ext_resource type="Script" uid="uid://gscklm1tfp1p" path="res://script/Player.gd" id="1_i3kcc"]
-[ext_resource type="Texture2D" uid="uid://vww5mwltj5sy" path="res://res/Player/Flandre_down_1.png" id="2_mkrjl"]
-[ext_resource type="Texture2D" uid="uid://831eas7greo4" path="res://res/Player/Flandre_down_2.png" id="3_b5srv"]
-[ext_resource type="Texture2D" uid="uid://cmc0sga4r7fil" path="res://res/Player/Flandre_left_1.png" id="4_2btri"]
 [ext_resource type="Script" uid="uid://sc2layedesau" path="res://script/State/ReloadState.gd" id="4_3dh33"]
-[ext_resource type="Texture2D" uid="uid://dnsgjvuxhdt54" path="res://res/Player/Flandre_left_2.png" id="5_udgp1"]
-[ext_resource type="Texture2D" uid="uid://cqcjpplwyoupb" path="res://res/Player/Flandre_right_1.png" id="6_t18vc"]
-[ext_resource type="Texture2D" uid="uid://byjvldeo0npt2" path="res://res/Player/Flandre_right_2.png" id="7_0nebs"]
-[ext_resource type="Texture2D" uid="uid://b0w2x42om143p" path="res://res/Player/Flandre_up_1.png" id="8_0x5qb"]
 [ext_resource type="Script" uid="uid://bg77fekg6akef" path="res://flan.gd" id="9_1hqo3"]
 [ext_resource type="Script" uid="uid://cafi4avmtrisk" path="res://script/State/StateMachine.gd" id="10_7vj8n"]
 [ext_resource type="Script" uid="uid://dwjceweqdd6fa" path="res://script/Targeting.gd" id="12_c2qy3"]
@@ -21,51 +14,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mkrjl")
+"texture": ExtResource("13_hvlqb")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mkrjl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_b5srv")
-}],
-"loop": 1,
-"name": &"down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_2btri")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_udgp1")
-}],
-"loop": 1,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_t18vc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_0nebs")
-}],
-"loop": 1,
-"name": &"right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_0x5qb")
-}],
-"loop": 1,
-"name": &"up",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -77,8 +29,10 @@ collision_mask = 2
 script = ExtResource("1_i3kcc")
 
 [node name="Flan" type="AnimatedSprite2D" parent="." unique_id=2103552760]
-position = Vector2(0, -2)
+position = Vector2(0, -8)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_4wrgo")
+animation = &"new_animation"
 script = ExtResource("9_1hqo3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370688901]
