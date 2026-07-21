@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cp3acgyf0ygi8"]
+
+[ext_resource type="Script" uid="uid://gij0rjuljvap" path="res://script/gamemenu.gd" id="1_a7xb3"]
+[ext_resource type="Texture2D" uid="uid://bctujmjn0t14q" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch.png" id="1_y4j0k"]
+
+[node name="menu" type="Control" unique_id=321717073]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a7xb3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476785655]
+layer = 42
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1819661509]
+offset_right = 967.0
+offset_bottom = 559.0
+color = Color(0, 0, 0, 0.41568628)
+
+[node name="Resume" type="Button" parent="CanvasLayer" unique_id=1628383993]
+offset_left = 404.0
+offset_top = 146.0
+offset_right = 546.0
+offset_bottom = 209.0
+flat = true
+
+[node name="9Patch" type="Sprite2D" parent="CanvasLayer/Resume" unique_id=1467332163]
+texture_filter = 1
+position = Vector2(79, 30)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("1_y4j0k")
+
+[node name="resume" type="Label" parent="CanvasLayer/Resume" unique_id=1889943428]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 170.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "RESUME"
+
+[node name="Settings" type="Button" parent="CanvasLayer" unique_id=281011281]
+offset_left = 398.0
+offset_top = 242.0
+offset_right = 549.0
+offset_bottom = 303.0
+flat = true
+
+[node name="9Patch" type="Sprite2D" parent="CanvasLayer/Settings" unique_id=415599182]
+texture_filter = 1
+position = Vector2(84, 32.999992)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("1_y4j0k")
+
+[node name="setting" type="Label" parent="CanvasLayer/Settings" unique_id=265575216]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 8.0
+offset_right = 151.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "SETTING"
+
+[node name="Menu" type="Button" parent="CanvasLayer" unique_id=975722555]
+offset_left = 400.0
+offset_top = 341.0
+offset_right = 552.0
+offset_bottom = 394.0
+flat = true
+
+[node name="9Patch" type="Sprite2D" parent="CanvasLayer/Menu" unique_id=1241373972]
+texture_filter = 1
+position = Vector2(82, 27.999992)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("1_y4j0k")
+
+[node name="menu" type="Label" parent="CanvasLayer/Menu" unique_id=730333433]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 1.0
+offset_right = 152.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "MENU"
+
+[connection signal="pressed" from="CanvasLayer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://y264iywneq33"]
+
+[ext_resource type="Texture2D" uid="uid://vww5mwltj5sy" path="res://res/Player/Flandre_down_1.png" id="1_8d0a2"]
+[ext_resource type="Texture2D" uid="uid://831eas7greo4" path="res://res/Player/Flandre_down_2.png" id="2_4aj2y"]
+[ext_resource type="Texture2D" uid="uid://cmc0sga4r7fil" path="res://res/Player/Flandre_left_1.png" id="3_2ia1j"]
+[ext_resource type="Texture2D" uid="uid://dnsgjvuxhdt54" path="res://res/Player/Flandre_left_2.png" id="4_sp03c"]
+[ext_resource type="Texture2D" uid="uid://cqcjpplwyoupb" path="res://res/Player/Flandre_right_1.png" id="5_vupfv"]
+[ext_resource type="Texture2D" uid="uid://byjvldeo0npt2" path="res://res/Player/Flandre_right_2.png" id="6_03ymn"]
+[ext_resource type="Texture2D" uid="uid://b0w2x42om143p" path="res://res/Player/Flandre_up_1.png" id="7_ey4eq"]
+[ext_resource type="Script" uid="uid://bg77fekg6akef" path="res://flan.gd" id="8_8d0a2"]
+[ext_resource type="Script" uid="uid://cafi4avmtrisk" path="res://script/State/StateMachine.gd" id="9_sp03c"]
+[ext_resource type="Script" uid="uid://c1emwqxalwiqk" path="res://script/State/IdleState.gd" id="10_vupfv"]
+[ext_resource type="Script" uid="uid://cotdyiqs6qpj2" path="res://script/State/WalkState.gd" id="11_03ymn"]
+[ext_resource type="PackedScene" path="res://screen/Enemy.tscn" id="13_03ymn"]
+[ext_resource type="Texture2D" uid="uid://cx04f7miot2pn" path="res://res/texture 1/Game UI Assets/Button/Button icon/menu.png" id="13_ey4eq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8d0a2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8d0a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4aj2y")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2ia1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sp03c")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vupfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_03ymn")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ey4eq")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wrgo"]
+radius = 17.117243
+
+[node name="Characters" type="Node2D" unique_id=1337117761]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=775815707 groups=["player"]]
+
+[node name="Flan" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2103552760]
+texture_filter = 1
+position = Vector2(474, 263)
+sprite_frames = SubResource("SpriteFrames_4wrgo")
+script = ExtResource("8_8d0a2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=370688901]
+position = Vector2(472, 264)
+shape = SubResource("CircleShape2D_4wrgo")
+
+[node name="StateMachine" type="Node" parent="CharacterBody2D" unique_id=1832184112 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("9_sp03c")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://cafi4avmtrisk"
+
+[node name="IdleState" type="Node" parent="CharacterBody2D/StateMachine" unique_id=132051063]
+script = ExtResource("10_vupfv")
+metadata/_custom_type_script = "uid://c1emwqxalwiqk"
+
+[node name="WalkState" type="Node" parent="CharacterBody2D/StateMachine" unique_id=933412417]
+script = ExtResource("11_03ymn")
+metadata/_custom_type_script = "uid://cotdyiqs6qpj2"
+
+[node name="Enemy" parent="CharacterBody2D" unique_id=493549651 instance=ExtResource("13_03ymn")]
+position = Vector2(329, -226)
+
+[node name="Enemy2" parent="CharacterBody2D" unique_id=1598296737 instance=ExtResource("13_03ymn")]
+position = Vector2(-164, -152)
+
+[node name="Enemy3" parent="CharacterBody2D" unique_id=1670416446 instance=ExtResource("13_03ymn")]
+position = Vector2(191, 300)
+
+[node name="Enemy4" parent="CharacterBody2D" unique_id=1138021602 instance=ExtResource("13_03ymn")]
+position = Vector2(-56, 215)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1866042822]
+position = Vector2(472, 264)
+zoom = Vector2(2.13, 2.13)
+
+[node name="Button" type="Button" parent="CharacterBody2D/Camera2D" unique_id=39592991]
+offset_left = -209.0
+offset_top = -110.0
+offset_right = -186.0
+offset_bottom = -87.0
+flat = true
+
+[node name="Menu" type="Sprite2D" parent="CharacterBody2D/Camera2D/Button" unique_id=944881762]
+position = Vector2(9.000001, 10.000001)
+scale = Vector2(0.24999996, 0.24999996)
+texture = ExtResource("13_ey4eq")
+
+[node name="Enemy" parent="." unique_id=2087722262 instance=ExtResource("13_03ymn")]
+position = Vector2(509, 52)
+
+[node name="Enemy2" parent="." unique_id=1299075938 instance=ExtResource("13_03ymn")]
+position = Vector2(-250, 70)
+
+[connection signal="pressed" from="CharacterBody2D/Camera2D/Button" to="CharacterBody2D/Flan" method="_on_button_pressed"]

@@ -17,9 +17,9 @@ layout_mode = 3
 anchors_preset = 0
 script = SubResource("GDScript_3jyav")
 
-[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1900786843]
-position = Vector2(482, 264.25)
-scale = Vector2(0.79333335, 0.79333335)
+[node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=424531311]
+position = Vector2(489.99997, 270.75)
+scale = Vector2(0.8066666, 0.8125926)
 texture = ExtResource("1_g1tpj")
 
 [node name="HSeparator" type="HSlider" parent="." unique_id=1939506776]

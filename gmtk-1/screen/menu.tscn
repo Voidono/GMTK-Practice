@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bu5kuyvxsnepn" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_lsgkf"]
 
 [node name="Menu" type="Node2D" unique_id=998409396]
+position = Vector2(-4, 0)
 script = ExtResource("1_i86ad")
 metadata/_edit_vertical_guides_ = [36.0]
 
 [node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1774177273]
-position = Vector2(482, 264.25)
-scale = Vector2(0.79333335, 0.79333335)
+position = Vector2(489.99997, 270.75)
+scale = Vector2(0.8066666, 0.8125926)
 texture = ExtResource("2_atih0")
 
 [node name="9PatchRed" type="Sprite2D" parent="." unique_id=1061146359]
@@ -27,6 +28,7 @@ offset_bottom = 38.0
 theme_override_font_sizes/font_size = 29
 text = "Play"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="9PatchRed2" type="Sprite2D" parent="." unique_id=1514951720]
 position = Vector2(140, 323)
@@ -40,6 +42,7 @@ offset_bottom = 45.0
 theme_override_font_sizes/font_size = 23
 text = "Setting"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="9PatchRed3" type="Sprite2D" parent="." unique_id=629171470]
 position = Vector2(142, 456)
@@ -53,6 +56,7 @@ offset_bottom = 46.0
 theme_override_font_sizes/font_size = 23
 text = "Exit"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Discord" type="Sprite2D" parent="." unique_id=839227108]
 position = Vector2(784, 485)

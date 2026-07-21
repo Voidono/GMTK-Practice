@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i6w73j5sd4xv"
+path="res://.godot/imported/Heal.wav-70ba31758bafa58cedd27aea24d55f6d.sample"
+
+[deps]
+
+source_file="res://res/Ninja Adventure - Asset Pack/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Heal.wav"
+dest_files=["res://.godot/imported/Heal.wav-70ba31758bafa58cedd27aea24d55f6d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b51px24dr0se2"]
+
+[ext_resource type="Script" uid="uid://c38k1dec1utip" path="res://script/camera.gd" id="1_cviwo"]
+[ext_resource type="Texture2D" uid="uid://cx04f7miot2pn" path="res://res/texture 1/Game UI Assets/Button/Button icon/menu.png" id="2_ebrhx"]
+
+[node name="Node2D" type="Node2D" unique_id=1440463979]
+position = Vector2(0, -2)
+script = ExtResource("1_cviwo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=49497965]
+zoom = Vector2(1.47, 1.47)
+
+[node name="Button" type="Button" parent="Camera2D" unique_id=1990494482]
+offset_left = -298.0
+offset_top = -159.0
+offset_right = -267.0
+offset_bottom = -128.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Camera2D" unique_id=715333064]
+texture_filter = 1
+position = Vector2(-282, -143)
+scale = Vector2(0.3452381, 0.3452381)
+texture = ExtResource("2_ebrhx")
+
+[connection signal="pressed" from="Camera2D/Button" to="." method="_on_button_pressed"]
