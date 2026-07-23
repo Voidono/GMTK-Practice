@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d0gd427j1vsw7"]
+
+[ext_resource type="Texture2D" uid="uid://cvjovp2l3xnay" path="res://res/image/con dơi.png" id="1_mn1hx"]
+[ext_resource type="Script" uid="uid://5dc26oajvjr2" path="res://script/enemy/con_dơi.gd" id="1_vh2jp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
+size = Vector2(52, 54)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bx8n8"]
+radius = 155.01291
+
+[node name="con dơi" type="CharacterBody2D" unique_id=1314835649]
+script = ExtResource("1_vh2jp")
+
+[node name="ConDơi" type="Sprite2D" parent="." unique_id=842246492]
+position = Vector2(0, 1)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("1_mn1hx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=169216597]
+shape = SubResource("RectangleShape2D_5h11f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2010089101]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1593231185]
+shape = SubResource("CircleShape2D_bx8n8")
