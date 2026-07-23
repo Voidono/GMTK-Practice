@@ -7,12 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bu5kuyvxsnepn" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_lsgkf"]
 
 [node name="Menu" type="Node2D" unique_id=998409396]
-position = Vector2(-4, 0)
 script = ExtResource("1_i86ad")
 metadata/_edit_vertical_guides_ = [36.0]
 
 [node name="ReviewUmamusumePrettyDerbySucHapDanKhongChoiTu" type="Sprite2D" parent="." unique_id=1774177273]
-position = Vector2(489.99997, 270.75)
+position = Vector2(476, 273)
 scale = Vector2(0.8066666, 0.8125926)
 texture = ExtResource("2_atih0")
 
