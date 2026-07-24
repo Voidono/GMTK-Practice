@@ -1,29 +1,32 @@
 class_name Player
 extends CharacterBody2D
-## Player is deliberately "dumb" now - just movement. It knows nothing
-## about guns, targeting, or states. Everything else is wired together
-## in the Inspector between sibling nodes (see README).
-
-signal direction_changed(direction: Vector2)
+## Deliberately thin: reads raw input and mouse-aim every frame and
+## exposes them as plain data. Movement itself (move_and_slide) now
+## belongs to whichever State is active - CombatState drives normal
+## WASD movement, DashingState drives the dash - so there's never a
+## conflict over who's allowed to set velocity on a given frame.
 
 @export var speed: float = 150.0
 
-## Last non-zero movement direction, exposed for anything that wants
-## a fallback aim direction (e.g. EngageState when there's no target).
-var facing_direction: Vector2 = Vector2.RIGHT
+## Raw WASD input this frame - can be Vector2.ZERO when standing still.
+var input_vector: Vector2 = Vector2.ZERO
+
+## Last non-zero input_vector. What "forward" means for a dash even if
+## you're not currently holding a direction when you trigger it.
+var last_movement_direction: Vector2 = Vector2.RIGHT
+
+## Direction from the player to the mouse cursor, updated every frame
+## regardless of state - this is what the slash aims toward. Decoupled
+## from movement on purpose: you can strafe one way while facing/
+## attacking another, same as most top-down action games.
+var aim_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(_delta: float) -> void:
-	# Swap these action names for your own Input Map if you have one;
-	# ui_left/right/up/down work out of the box with no setup.
-	var input_dir := Input.get_vector("right", "left", "up", "down")
-	velocity = input_dir * speed
-	move_and_slide()
+	input_vector = Input.get_vector("right", "left", "up", "down")
+	if input_vector.length() > 0.0:
+		last_movement_direction = input_vector.normalized()
 
-	if input_dir.length() > 0.0:
-		var new_direction := input_dir.normalized()
-		if new_direction != facing_direction:
-			facing_direction = new_direction
-			direction_changed.emit(facing_direction)
+	aim_direction = (get_global_mouse_position() - global_position).normalized()

@@ -9,6 +9,7 @@ func _ready() -> void:
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.state_machine = self
+			child.transition_requested.connect(_on_transition_requested)
 		
 	if initial_state:
 		change_state(initial_state.name.to_lower())
@@ -24,6 +25,10 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if current_state:
 		current_state.handle_input(event)
+
+func _on_transition_requested(next_state: State) -> void:
+	if next_state:
+		change_state(next_state.name)
 
 func change_state(new_state_name) -> void:
 		if current_state:
