@@ -15,7 +15,7 @@ func _on_resume_pressed() -> void:
 	resume()
 
 func _on_settings_pressed() -> void:
-	print("Ra menu mà chỉnh")
+	get_tree().change_scene_to_file("res://screen/menusettinggame.tscn")
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false

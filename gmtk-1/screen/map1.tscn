@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://8lck186mmehs" path="res://res/Ninja Adventure - Asset Pack/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_tvu3d"]
 [ext_resource type="PackedScene" uid="uid://dflhb72afu7e3" path="res://screen/Gameplay/Player.tscn" id="4_bd45l"]
 [ext_resource type="PackedScene" uid="uid://b51px24dr0se2" path="res://screen/camera.tscn" id="5_tvu3d"]
-[ext_resource type="PackedScene" uid="uid://d0gd427j1vsw7" path="res://screen/con dơi.tscn" id="6_xhd4t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhd4t"]
 texture = ExtResource("1_4taed")
@@ -948,6 +947,3 @@ position = Vector2(1, 7)
 
 [node name="Node2D" parent="CharacterBody2D" unique_id=1440463979 instance=ExtResource("5_tvu3d")]
 position = Vector2(1, -7)
-
-[node name="con dơi" parent="." unique_id=1314835649 instance=ExtResource("6_xhd4t")]
-position = Vector2(-118, 0)
