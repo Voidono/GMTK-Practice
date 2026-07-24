@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gij0rjuljvap" path="res://script/gamemenu.gd" id="1_a7xb3"]
 [ext_resource type="Texture2D" uid="uid://bctujmjn0t14q" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch.png" id="1_y4j0k"]
+[ext_resource type="Texture2D" uid="uid://d06fvykguqfyi" path="res://res/texture 1/Game UI Assets/Color/Red 1.png" id="2_la6hc"]
 
 [node name="menu" type="Control" unique_id=321717073]
 process_mode = 3
@@ -16,6 +17,11 @@ layer = 42
 offset_right = 967.0
 offset_bottom = 559.0
 color = Color(0, 0, 0, 0.41568628)
+
+[node name="Red1" type="Sprite2D" parent="CanvasLayer/ColorRect" unique_id=1214670379]
+position = Vector2(485, 268)
+scale = Vector2(3.7650602, 3.7650602)
+texture = ExtResource("2_la6hc")
 
 [node name="Resume" type="Button" parent="CanvasLayer" unique_id=1628383993]
 texture_filter = 1
@@ -33,12 +39,11 @@ texture = ExtResource("1_y4j0k")
 
 [node name="resume" type="Label" parent="CanvasLayer/Resume" unique_id=1889943428]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 7.0
-offset_right = 170.0
-offset_bottom = 68.0
+offset_left = 14.0
+offset_right = 167.0
+offset_bottom = 61.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 67
 text = "RESUME"
 
 [node name="Settings" type="Button" parent="CanvasLayer" unique_id=281011281]
@@ -56,12 +61,12 @@ texture = ExtResource("1_y4j0k")
 
 [node name="setting" type="Label" parent="CanvasLayer/Settings" unique_id=265575216]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 8.0
-offset_right = 151.0
-offset_bottom = 62.0
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 59.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 63
 text = "SETTING"
 
 [node name="Menu" type="Button" parent="CanvasLayer" unique_id=975722555]
@@ -79,12 +84,12 @@ texture = ExtResource("1_y4j0k")
 
 [node name="menu" type="Label" parent="CanvasLayer/Menu" unique_id=730333433]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 1.0
-offset_right = 152.0
-offset_bottom = 59.0
+offset_left = 32.0
+offset_top = -9.0
+offset_right = 162.0
+offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 37
+theme_override_font_sizes/font_size = 78
 text = "MENU"
 
 [connection signal="pressed" from="CanvasLayer/Resume" to="." method="_on_resume_pressed"]

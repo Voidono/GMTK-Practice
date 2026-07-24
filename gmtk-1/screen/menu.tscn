@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://i4lvenyviqm3"]
 
 [ext_resource type="Script" uid="uid://omca6fqhohbf" path="res://script/menu.gd" id="1_i86ad"]
-[ext_resource type="Texture2D" uid="uid://bgkl1gve5jxat" path="res://res/image/codarkdarkbruhbruhlmao.png" id="2_v7uw0"]
+[ext_resource type="Texture2D" uid="uid://crp6bfh4omp3d" path="res://res/image/codarkdarkbruhbruhlmao.png" id="2_v7uw0"]
 [ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_at1li"]
 [ext_resource type="Texture2D" uid="uid://8lck186mmehs" path="res://res/Ninja Adventure - Asset Pack/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_xtfch"]
 [ext_resource type="Texture2D" uid="uid://bdsuys71t52bb" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_ytsew"]
 [ext_resource type="Texture2D" uid="uid://bu5kuyvxsnepn" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_lsgkf"]
 [ext_resource type="Texture2D" uid="uid://bkqn0ky521ya6" path="res://res/image/Untitled_7-d3e4.png" id="7_txwv3"]
-[ext_resource type="Script" uid="uid://bkmhgikdpi7md" path="res://script/animated_sprite_2d.gd" id="8_xtfch"]
+[ext_resource type="Script" uid="uid://dy32hj8vvl8b7" path="res://script/animated_sprite_2d.gd" id="8_xtfch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41p4x"]
 texture = ExtResource("2_v7uw0")
@@ -591,7 +591,7 @@ offset_left = -96.0
 offset_top = -45.0
 offset_right = 93.0
 offset_bottom = 38.0
-theme_override_font_sizes/font_size = 29
+theme_override_font_sizes/font_size = 88
 text = "Play"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -606,7 +606,7 @@ offset_left = -100.0
 offset_top = -52.0
 offset_right = 98.0
 offset_bottom = 45.0
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 84
 text = "Setting"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -621,7 +621,7 @@ offset_left = -99.0
 offset_top = -52.0
 offset_right = 100.0
 offset_bottom = 46.0
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 109
 text = "Exit"
 flat = true
 metadata/_edit_use_anchors_ = true
