@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dcx3kscgpqsxd" path="res://script/State/CombatState.gd" id="13_i3kcc"]
 [ext_resource type="AudioStream" uid="uid://5hkf64bnf7g2" path="res://sound track/tieesng chém.mp3" id="13_mkrjl"]
 [ext_resource type="Texture2D" uid="uid://cb6kdpiynrbqe" path="res://res/image/sword_iron.png" id="14_sword"]
+[ext_resource type="AudioStream" uid="uid://bmrngueef7rpq" path="res://sound track/Ghi tiêu chuẩn 9_1.mp3" id="15_b5srv"]
 [ext_resource type="Texture2D" uid="uid://dt4c5l22aud5s" path="res://res/image/slash animation/Slash 2.png" id="15_slash_2"]
 [ext_resource type="Texture2D" uid="uid://b25c3kwl1fsgt" path="res://res/image/slash animation/Slash 3.png" id="16_slash_3"]
 [ext_resource type="Texture2D" uid="uid://cofhojo3cuplm" path="res://res/image/slash animation/Slash 4.png" id="17_slash_4"]
@@ -213,5 +214,8 @@ sprite_frames = SubResource("SpriteFrames_3dh33")
 animation = &"walk"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=616917517]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=611424540]
+stream = ExtResource("15_b5srv")
 
 [connection signal="animation_finished" from="WeaponPoint/SlashEffect" to="WeaponPoint" method="_on_slash_effect_animation_finished"]
