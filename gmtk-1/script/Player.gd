@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 150.0
 @onready var animation_player := $AnimationPlayer
 @onready var weapon_point: Marker2D = $WeaponPoint
+@onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
 ## Raw WASD input this frame - can be Vector2.ZERO when standing still.
 var input_vector: Vector2 = Vector2.ZERO
 
@@ -29,10 +30,25 @@ func _physics_process(_delta: float) -> void:
 	input_vector = Input.get_vector("right", "left", "up", "down")
 	if input_vector.length() > 0.0:
 		last_movement_direction = input_vector.normalized()
+	_update_movement_animation()
 
 	aim_direction = (get_global_mouse_position() - global_position).normalized()
 	if aim_direction != Vector2.ZERO:
 		weapon_point.rotation = aim_direction.angle()
+
+func _update_movement_animation() -> void:
+	if input_vector == Vector2.ZERO:
+		character_sprite.stop()
+		return
+
+	var animation_name: StringName
+	if absf(input_vector.x) > absf(input_vector.y):
+		animation_name = &"right" if input_vector.x > 0.0 else &"left"
+	else:
+		animation_name = &"walk" if input_vector.y > 0.0 else &"back"
+
+	if character_sprite.animation != animation_name or not character_sprite.is_playing():
+		character_sprite.play(animation_name)
 ## States call this instead of setting velocity + move_and_slide()
 ## themselves. Counteracts Engine.time_scale so the player keeps moving
 ## at normal real-world speed even while TimeSlowAbility has slowed

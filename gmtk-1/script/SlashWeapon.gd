@@ -12,32 +12,57 @@ extends Marker2D
 signal swung(hitbox: Node)
 
 @export var hitbox_scene: PackedScene
-@export var reach: float = 40.0  # how far in front of the player the hitbox spawns
+@export var combo_reset_time: float = 1.25
 @onready var slash_effect: AnimatedSprite2D = get_node_or_null("SlashEffect")
 @onready var sword: Sprite2D = get_node_or_null("Sword")
 
-func swing(direction: Vector2) -> void:
-	_play_slash_effect()
+var _combo_step := 0
+var _last_swing_time := -INF
+var _time_stop_active := false
+var _attack_in_progress := false
+
+func set_time_stop_active(active: bool) -> void:
+	_time_stop_active = active
+	if slash_effect:
+		# AnimatedSprite2D is normally slowed by Engine.time_scale. Offset it
+		# so sword swings always finish in the same real-world duration.
+		slash_effect.speed_scale = 1.0 / Engine.time_scale if active and Engine.time_scale > 0.0 else 1.0
+
+func swing(direction: Vector2) -> bool:
+	if _attack_in_progress:
+		return false
+
+	var now := Time.get_ticks_msec() * 0.001
+	if now - _last_swing_time > combo_reset_time:
+		_combo_step = 0
+
+	_combo_step = (_combo_step % 3) + 1
+	_last_swing_time = now
+	_play_slash_effect(_combo_step)
 
 	if not hitbox_scene:
 		push_warning("SlashWeapon: no hitbox_scene assigned in the Inspector")
-		return
+		return false
 
-	var hitbox := hitbox_scene.instantiate()
+	var hitbox: SlashHitbox = hitbox_scene.instantiate()
+	hitbox.configure(_combo_step, direction)
+	hitbox.global_position = global_position
 	get_tree().current_scene.add_child(hitbox)
-	hitbox.global_position = global_position + direction * reach
-	hitbox.rotation = direction.angle()
 	swung.emit(hitbox)
+	return true
 
-func _play_slash_effect() -> void:
+func _play_slash_effect(combo_step: int) -> void:
 	if not slash_effect:
 		return
 	
+	_attack_in_progress = true
 	slash_effect.show()
-	slash_effect.play(&"slash")
+	var animation_name := StringName("slash_time_stop_%d" % combo_step) if _time_stop_active else StringName("slash_%d" % combo_step)
+	slash_effect.play(animation_name)
 	sword.hide()
 
 func _on_slash_effect_animation_finished() -> void:
+	_attack_in_progress = false
 	if slash_effect:
 		slash_effect.hide()
 		sword.show()

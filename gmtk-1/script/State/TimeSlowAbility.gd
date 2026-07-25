@@ -34,20 +34,25 @@ signal deactivated
 signal charge_changed(current: float, max: float)
 
 @export var activate_action: StringName = &"time_slow"
-@export var slow_scale: float = 0.25              # how slow the world gets (1.0 = normal, lower = slower)
-@export var max_charge: float = 3.0                # seconds of real-world hold time available
+@export_range(0.05, 1.0, 0.05) var slow_scale: float = 0.15
+@export var max_charge: float = 50.0                # seconds of real-world hold time available
 @export var regen_rate: float = 1.0                 # charge units regained per real second while inactive
 @export var min_charge_to_activate: float = 0.2      # can't trigger on fumes
 
 var current_charge: float
 var is_active: bool = false
+@onready var weapon: SlashWeapon = get_parent().get_node_or_null("WeaponPoint") as SlashWeapon
 
 func _ready() -> void:
 	current_charge = max_charge
+	if not weapon:
+		push_warning("TimeSlowAbility: expected a SlashWeapon at ../WeaponPoint.")
 
 func _exit_tree() -> void:
 	if is_active:
 		Engine.time_scale = 1.0
+	if weapon:
+		weapon.set_time_stop_active(false)
 
 func _process(delta: float) -> void:
 	var real_delta := get_real_delta(delta)
@@ -70,11 +75,15 @@ func _process(delta: float) -> void:
 func _activate() -> void:
 	is_active = true
 	Engine.time_scale = slow_scale
+	if weapon:
+		weapon.set_time_stop_active(true)
 	activated.emit()
 
 func _deactivate() -> void:
 	is_active = false
 	Engine.time_scale = 1.0
+	if weapon:
+		weapon.set_time_stop_active(false)
 	deactivated.emit()
 
 ## Same trick as Player.get_real_delta() - kept as its own copy here
