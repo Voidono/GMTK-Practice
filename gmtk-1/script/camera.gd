@@ -2,7 +2,7 @@ extends Node2D
 
 #load trước
 const PAUSE_MENU_SCENE = preload("res://screen/gamemenu.tscn")
-
+const SETTING_MENU = preload("res://screen/settinggame_menu.tscn")
 
 
 func _on_button_pressed() -> void:

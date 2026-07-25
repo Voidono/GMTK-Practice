@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://jimg0c5maedn"]
 
 [ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="1_njd6i"]
+[ext_resource type="Texture2D" uid="uid://c4a4br6ok8m5r" path="res://res/texture 1/Game UI Assets/Button/Button icon/exit.png" id="2_wie8f"]
+[ext_resource type="Script" uid="uid://b7lu7sjb177nh" path="res://script/button.gd" id="3_08qjp"]
 
 [node name="settinggame menu" type="Control" unique_id=1701879429]
 layout_mode = 3
@@ -65,3 +67,20 @@ offset_right = -18.31192
 offset_bottom = 76.0
 theme_override_font_sizes/font_size = 65
 text = "Language"
+
+[node name="Exit" type="Sprite2D" parent="CanvasLayer" unique_id=501714010]
+position = Vector2(70, 56.000015)
+scale = Vector2(0.6666667, 0.6666667)
+texture = ExtResource("2_wie8f")
+
+[node name="Button" type="Button" parent="CanvasLayer/Exit" unique_id=768358207]
+anchors_preset = -1
+anchor_left = -0.036000002
+offset_left = -38.975998
+offset_top = -34.500027
+offset_right = 38.999985
+offset_bottom = 37.499973
+flat = true
+script = ExtResource("3_08qjp")
+
+[connection signal="pressed" from="CanvasLayer/Exit/Button" to="CanvasLayer/Exit/Button" method="_on_pressed"]

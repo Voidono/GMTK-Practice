@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_at1li"]
 [ext_resource type="Texture2D" uid="uid://8lck186mmehs" path="res://res/Ninja Adventure - Asset Pack/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_xtfch"]
 [ext_resource type="Texture2D" uid="uid://bdsuys71t52bb" path="res://res/texture 1/Game UI Assets/Button/button Links/Discord.png" id="4_ytsew"]
-[ext_resource type="Texture2D" uid="uid://bu5kuyvxsnepn" path="res://res/texture 1/Game UI Assets/Button/button Links/X-twiter.png" id="5_lsgkf"]
-[ext_resource type="Texture2D" uid="uid://bkqn0ky521ya6" path="res://res/image/Untitled_7-d3e4.png" id="7_txwv3"]
+[ext_resource type="Texture2D" uid="uid://c673vv663t5cy" path="res://res/image/Untitled_7-c203.png" id="7_xtfch"]
+[ext_resource type="Texture2D" uid="uid://bsx14p7f43yrc" path="res://res/texture 1/Game UI Assets/Button/button Links/You tube.png" id="8_txwv3"]
 [ext_resource type="Script" uid="uid://dy32hj8vvl8b7" path="res://script/animated_sprite_2d.gd" id="8_xtfch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41p4x"]
@@ -536,32 +536,44 @@ texture = ExtResource("3_xtfch")
 [sub_resource type="TileSet" id="TileSet_bx8n8"]
 sources/0 = SubResource("TileSetAtlasSource_djcx2")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgpv6"]
-atlas = ExtResource("7_txwv3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_txwv3"]
+atlas = ExtResource("7_xtfch")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_34n5c"]
-atlas = ExtResource("7_txwv3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_41p4x"]
+atlas = ExtResource("7_xtfch")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dxxk"]
-atlas = ExtResource("7_txwv3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_djcx2"]
+atlas = ExtResource("7_xtfch")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qgpv6")
+"texture": SubResource("AtlasTexture_txwv3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34n5c")
+"texture": SubResource("AtlasTexture_41p4x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3dxxk")
+"texture": SubResource("AtlasTexture_djcx2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34n5c")
+"texture": SubResource("AtlasTexture_41p4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txwv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txwv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txwv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txwv3")
 }],
 "loop": 1,
 "name": &"Walk",
@@ -630,10 +642,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(784, 485)
 texture = ExtResource("4_ytsew")
 
-[node name="XTwiter" type="Sprite2D" parent="." unique_id=771786928]
-position = Vector2(894, 486)
-texture = ExtResource("5_lsgkf")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1087630374]
 texture_filter = 1
 position = Vector2(709, 331)
@@ -641,6 +649,10 @@ scale = Vector2(6.976563, 6.976563)
 sprite_frames = SubResource("SpriteFrames_5h11f")
 animation = &"Walk"
 script = ExtResource("8_xtfch")
+
+[node name="YouTube" type="Sprite2D" parent="." unique_id=1145903024]
+position = Vector2(894, 488)
+texture = ExtResource("8_txwv3")
 
 [connection signal="pressed" from="9PatchRed/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="9PatchRed2/Button2" to="." method="_on_button_2_pressed"]
