@@ -11,15 +11,11 @@ extends State
 
 @export var player: Player
 @export var slash_weapon: SlashWeapon
-@export var dashing_state: State
+@export var dashing_state: DashingState
 @export var slash_action: StringName = &"slash"
 @export var dash_action: StringName = &"dash"
 
 func enter() -> void:
-	# TEMPORARY - remove once dash is confirmed working
-	print("dash action exists: ", InputMap.has_action(dash_action))
-	print("dash action bindings: ", InputMap.action_get_events(dash_action))
-
 	if not player:
 		push_error("CombatState: 'Player' field is unassigned in the Inspector.")
 	if not slash_weapon:
@@ -31,8 +27,7 @@ func physics_update(_delta: float) -> void:
 	if not player:
 		return
 
-	player.velocity = player.input_vector * player.speed
-	player.move_and_slide()
+	player.move(player.input_vector * player.speed)
 
 	if Input.is_action_just_pressed(slash_action):
 		if slash_weapon:
@@ -40,7 +35,8 @@ func physics_update(_delta: float) -> void:
 		else:
 			push_warning("CombatState: slash pressed but 'Slash Weapon' field is unassigned - nothing happens.")
 	elif Input.is_action_just_pressed(dash_action):
-		if dashing_state:
-			transition_requested.emit(dashing_state)
-		else:
+		if not dashing_state:
 			push_warning("CombatState: dash pressed but 'Dashing State' field is unassigned - nothing happens.")
+		elif dashing_state.can_dash():
+			transition_requested.emit(dashing_state)
+		# else: still on cooldown - silently ignored, this is normal play, not a bug

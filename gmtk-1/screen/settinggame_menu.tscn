@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://jimg0c5maedn"]
 
-[ext_resource type="Script" path="res://script/settinggame_menu.gd" id="1_njd6i"]
-
 [node name="settinggame menu" type="Control" unique_id=1701879429]
 layout_mode = 3
 anchors_preset = 15
@@ -9,7 +7,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_njd6i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1312191166]
 layer = 43

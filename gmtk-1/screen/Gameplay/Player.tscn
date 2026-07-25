@@ -184,20 +184,20 @@ player = NodePath("../..")
 combat_state = NodePath("../Combat")
 
 [node name="WeaponPoint" type="Marker2D" parent="." unique_id=318796674]
-position = Vector2(11, 2)
 script = ExtResource("6_hi50c")
 hitbox_scene = ExtResource("7_ahu3t")
+reach = 60.0
 
 [node name="Sword" type="Sprite2D" parent="WeaponPoint" unique_id=57710878]
 z_index = 1
-position = Vector2(17, -17)
+position = Vector2(29, -29)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("14_sword")
 
 [node name="SlashEffect" type="AnimatedSprite2D" parent="WeaponPoint" unique_id=388463378]
 visible = false
 z_index = 2
-position = Vector2(22, 0)
+position = Vector2(35, 0)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_slash_effect")
 animation = &"slash"
