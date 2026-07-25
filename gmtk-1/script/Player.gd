@@ -7,6 +7,8 @@ extends CharacterBody2D
 ## conflict over who's allowed to set velocity on a given frame.
 
 @export var speed: float = 150.0
+@onready var animation_player := $AnimationPlayer
+@onready var weapon_point: Marker2D = $WeaponPoint
 
 ## Raw WASD input this frame - can be Vector2.ZERO when standing still.
 var input_vector: Vector2 = Vector2.ZERO
@@ -30,3 +32,5 @@ func _physics_process(_delta: float) -> void:
 		last_movement_direction = input_vector.normalized()
 
 	aim_direction = (get_global_mouse_position() - global_position).normalized()
+	if aim_direction != Vector2.ZERO:
+		weapon_point.rotation = aim_direction.angle()

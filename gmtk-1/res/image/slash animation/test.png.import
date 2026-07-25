@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diaolxh4cje43"
-path="res://.godot/imported/Flandre_idle_down_2.png-d5248805d431f00021041fb31b492438.ctex"
+uid="uid://b7ijjn6c745dp"
+path="res://.godot/imported/test.png-5f27d168862d76e735ddff63ac2db1a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Player/Flandre_idle_down_2.png"
-dest_files=["res://.godot/imported/Flandre_idle_down_2.png-d5248805d431f00021041fb31b492438.ctex"]
+source_file="res://res/image/slash animation/test.png"
+dest_files=["res://.godot/imported/test.png-5f27d168862d76e735ddff63ac2db1a8.ctex"]
 
 [params]
 

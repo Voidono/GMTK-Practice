@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2vul0mokmk8d"
-path="res://.godot/imported/idle_jotaro.png-e60e1c6df4fd873b2ca420857c968f42.ctex"
+uid="uid://b25c3kwl1fsgt"
+path="res://.godot/imported/Slash 3.png-bf93230792b10b043e828e5db2bcce51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Player/idle_jotaro.png"
-dest_files=["res://.godot/imported/idle_jotaro.png-e60e1c6df4fd873b2ca420857c968f42.ctex"]
+source_file="res://res/image/slash animation/Slash 3.png"
+dest_files=["res://.godot/imported/Slash 3.png-bf93230792b10b043e828e5db2bcce51.ctex"]
 
 [params]
 

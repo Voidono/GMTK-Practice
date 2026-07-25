@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byjvldeo0npt2"
-path="res://.godot/imported/Flandre_right_2.png-08b87d0258351a69f3588adb6568a617.ctex"
+uid="uid://dt4c5l22aud5s"
+path="res://.godot/imported/Slash 2.png-ea6496838974f67721d2a17a7307ca4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Player/Flandre_right_2.png"
-dest_files=["res://.godot/imported/Flandre_right_2.png-08b87d0258351a69f3588adb6568a617.ctex"]
+source_file="res://res/image/slash animation/Slash 2.png"
+dest_files=["res://.godot/imported/Slash 2.png-ea6496838974f67721d2a17a7307ca4a.ctex"]
 
 [params]
 

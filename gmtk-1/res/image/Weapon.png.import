@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3mt0721bblph"
-path="res://.godot/imported/Flandre_idle_right_2.png-db75f01a04771ac8bd4e0d026016cc01.ctex"
+uid="uid://d2fa5iryd4byr"
+path="res://.godot/imported/Weapon.png-d9c84f2127ac33c928740fa174e71217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Player/Flandre_idle_right_2.png"
-dest_files=["res://.godot/imported/Flandre_idle_right_2.png-db75f01a04771ac8bd4e0d026016cc01.ctex"]
+source_file="res://res/image/Weapon.png"
+dest_files=["res://.godot/imported/Weapon.png-d9c84f2127ac33c928740fa174e71217.ctex"]
 
 [params]
 

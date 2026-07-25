@@ -13,8 +13,12 @@ signal swung(hitbox: Node)
 
 @export var hitbox_scene: PackedScene
 @export var reach: float = 40.0  # how far in front of the player the hitbox spawns
+@onready var slash_effect: AnimatedSprite2D = get_node_or_null("SlashEffect")
+@onready var sword: Sprite2D = get_node_or_null("Sword")
 
 func swing(direction: Vector2) -> void:
+	_play_slash_effect()
+
 	if not hitbox_scene:
 		push_warning("SlashWeapon: no hitbox_scene assigned in the Inspector")
 		return
@@ -24,3 +28,16 @@ func swing(direction: Vector2) -> void:
 	hitbox.global_position = global_position + direction * reach
 	hitbox.rotation = direction.angle()
 	swung.emit(hitbox)
+
+func _play_slash_effect() -> void:
+	if not slash_effect:
+		return
+	
+	slash_effect.show()
+	slash_effect.play(&"slash")
+	sword.hide()
+
+func _on_slash_effect_animation_finished() -> void:
+	if slash_effect:
+		slash_effect.hide()
+		sword.show()
