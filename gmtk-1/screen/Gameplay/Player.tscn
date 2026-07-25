@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkqn0ky521ya6" path="res://res/image/Untitled_7-d3e4.png" id="10_k17sa"]
 [ext_resource type="Script" uid="uid://dwjceweqdd6fa" path="res://script/Targeting.gd" id="12_c2qy3"]
 [ext_resource type="Script" uid="uid://dcx3kscgpqsxd" path="res://script/State/CombatState.gd" id="13_i3kcc"]
+[ext_resource type="AudioStream" uid="uid://5hkf64bnf7g2" path="res://sound track/tieesng chém.mp3" id="13_mkrjl"]
 [ext_resource type="Texture2D" uid="uid://cb6kdpiynrbqe" path="res://res/image/sword_iron.png" id="14_sword"]
 [ext_resource type="Texture2D" uid="uid://dt4c5l22aud5s" path="res://res/image/slash animation/Slash 2.png" id="15_slash_2"]
 [ext_resource type="Texture2D" uid="uid://b25c3kwl1fsgt" path="res://res/image/slash animation/Slash 3.png" id="16_slash_3"]
@@ -202,6 +203,10 @@ scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_slash_effect")
 animation = &"slash"
 frame = 3
+
+[node name="SwingSound" type="AudioStreamPlayer2D" parent="WeaponPoint" unique_id=1229080016]
+stream = ExtResource("13_mkrjl")
+volume_db = 8.465
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=688169206]
 sprite_frames = SubResource("SpriteFrames_3dh33")

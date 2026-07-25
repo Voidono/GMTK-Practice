@@ -15,10 +15,14 @@ signal swung(hitbox: Node)
 @export var reach: float = 40.0  # how far in front of the player the hitbox spawns
 @onready var slash_effect: AnimatedSprite2D = get_node_or_null("SlashEffect")
 @onready var sword: Sprite2D = get_node_or_null("Sword")
+@onready var swing_sound: AudioStreamPlayer2D = get_node_or_null("SwingSound")
 
 func swing(direction: Vector2) -> void:
 	_play_slash_effect()
-
+	
+	if swing_sound:
+		swing_sound.play()
+	
 	if not hitbox_scene:
 		push_warning("SlashWeapon: no hitbox_scene assigned in the Inspector")
 		return
