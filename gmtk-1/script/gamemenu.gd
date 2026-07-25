@@ -1,5 +1,7 @@
 extends Control
 
+const SETTING_MENU = preload("res://screen/settinggame_menu.tscn")
+const PAUSE_MENU_SCENE = preload("res://screen/gamemenu.tscn")
 
 signal game_resumed
 
@@ -15,7 +17,19 @@ func _on_resume_pressed() -> void:
 	resume()
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://screen/menusettinggame.tscn")
+	var setting_menu = SETTING_MENU.instantiate()
+	
+	get_parent().add_child(setting_menu)
+	
+	if setting_menu.has_signal("closed"):
+		setting_menu.closed.connect(_on_setting_closed)
+	
+	queue_free()
+
+func _on_setting_closed():
+	# Tạo lại Pause Menu
+	var new_pause = PAUSE_MENU_SCENE.instantiate()
+	get_parent().add_child(new_pause)
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
