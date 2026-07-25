@@ -8,9 +8,34 @@
 [ext_resource type="Texture2D" uid="uid://bkqn0ky521ya6" path="res://res/image/Untitled_7-d3e4.png" id="10_k17sa"]
 [ext_resource type="Script" uid="uid://dwjceweqdd6fa" path="res://script/Targeting.gd" id="12_c2qy3"]
 [ext_resource type="Script" uid="uid://dcx3kscgpqsxd" path="res://script/State/CombatState.gd" id="13_i3kcc"]
+[ext_resource type="Texture2D" uid="uid://cb6kdpiynrbqe" path="res://res/image/sword_iron.png" id="14_sword"]
+[ext_resource type="Texture2D" uid="uid://dt4c5l22aud5s" path="res://res/image/slash animation/Slash 2.png" id="15_slash_2"]
+[ext_resource type="Texture2D" uid="uid://b25c3kwl1fsgt" path="res://res/image/slash animation/Slash 3.png" id="16_slash_3"]
+[ext_resource type="Texture2D" uid="uid://cofhojo3cuplm" path="res://res/image/slash animation/Slash 4.png" id="17_slash_4"]
+[ext_resource type="Texture2D" uid="uid://cy7b2h7rhhdlo" path="res://res/image/slash animation/Slash 5.png" id="18_slash_5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wrgo"]
 radius = 17.117243
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slash_effect"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_slash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_slash_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_slash_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_slash_5")
+}],
+"loop": 0,
+"name": &"slash",
+"speed": 14.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peaon"]
 atlas = ExtResource("10_k17sa")
@@ -163,6 +188,25 @@ position = Vector2(11, 2)
 script = ExtResource("6_hi50c")
 hitbox_scene = ExtResource("7_ahu3t")
 
+[node name="Sword" type="Sprite2D" parent="WeaponPoint" unique_id=57710878]
+z_index = 1
+position = Vector2(17, -17)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("14_sword")
+
+[node name="SlashEffect" type="AnimatedSprite2D" parent="WeaponPoint" unique_id=388463378]
+visible = false
+z_index = 2
+position = Vector2(22, 0)
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_slash_effect")
+animation = &"slash"
+frame = 3
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=688169206]
 sprite_frames = SubResource("SpriteFrames_3dh33")
 animation = &"walk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=616917517]
+
+[connection signal="animation_finished" from="WeaponPoint/SlashEffect" to="WeaponPoint" method="_on_slash_effect_animation_finished"]
