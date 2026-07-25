@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://drkrru4pxmb1w"]
+
+[ext_resource type="Script" uid="uid://bkp7go64myjdc" path="res://script/State/TimeSlowAbility.gd" id="1_6j2kp"]
+
+[node name="TimeSlowAbility" type="Node" unique_id=1227072338]
+script = ExtResource("1_6j2kp")

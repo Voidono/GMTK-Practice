@@ -1,12 +1,5 @@
 [gd_scene format=3 uid="uid://df5cuuitifi88"]
 
-[ext_resource type="Texture2D" uid="uid://vww5mwltj5sy" path="res://res/Player/Flandre_down_1.png" id="1_8d0a2"]
-[ext_resource type="Texture2D" uid="uid://831eas7greo4" path="res://res/Player/Flandre_down_2.png" id="2_4aj2y"]
-[ext_resource type="Texture2D" uid="uid://cmc0sga4r7fil" path="res://res/Player/Flandre_left_1.png" id="3_2ia1j"]
-[ext_resource type="Texture2D" uid="uid://dnsgjvuxhdt54" path="res://res/Player/Flandre_left_2.png" id="4_sp03c"]
-[ext_resource type="Texture2D" uid="uid://cqcjpplwyoupb" path="res://res/Player/Flandre_right_1.png" id="5_vupfv"]
-[ext_resource type="Texture2D" uid="uid://byjvldeo0npt2" path="res://res/Player/Flandre_right_2.png" id="6_03ymn"]
-[ext_resource type="Texture2D" uid="uid://b0w2x42om143p" path="res://res/Player/Flandre_up_1.png" id="7_ey4eq"]
 [ext_resource type="Script" uid="uid://bg77fekg6akef" path="res://flan.gd" id="8_8d0a2"]
 [ext_resource type="Script" uid="uid://cafi4avmtrisk" path="res://script/State/StateMachine.gd" id="9_sp03c"]
 [ext_resource type="Script" uid="uid://c1emwqxalwiqk" path="res://script/State/IdleState.gd" id="10_vupfv"]
@@ -17,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8d0a2")
+"texture": null
 }],
 "loop": 1,
 "name": &"default",
@@ -25,10 +18,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8d0a2")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_4aj2y")
+"texture": null
 }],
 "loop": 1,
 "name": &"down",
@@ -36,10 +29,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_2ia1j")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sp03c")
+"texture": null
 }],
 "loop": 1,
 "name": &"left",
@@ -47,10 +40,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_vupfv")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_03ymn")
+"texture": null
 }],
 "loop": 1,
 "name": &"right",
@@ -58,7 +51,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_ey4eq")
+"texture": null
 }],
 "loop": 1,
 "name": &"up",
@@ -95,18 +88,6 @@ metadata/_custom_type_script = "uid://c1emwqxalwiqk"
 script = ExtResource("11_03ymn")
 metadata/_custom_type_script = "uid://cotdyiqs6qpj2"
 
-[node name="Enemy" parent="CharacterBody2D" unique_id=493549651]
-position = Vector2(329, -226)
-
-[node name="Enemy2" parent="CharacterBody2D" unique_id=1598296737]
-position = Vector2(-164, -152)
-
-[node name="Enemy3" parent="CharacterBody2D" unique_id=1670416446]
-position = Vector2(191, 300)
-
-[node name="Enemy4" parent="CharacterBody2D" unique_id=1138021602]
-position = Vector2(-56, 215)
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1866042822]
 position = Vector2(472, 264)
 zoom = Vector2(2.13, 2.13)
@@ -122,11 +103,5 @@ flat = true
 position = Vector2(9.000001, 10.000001)
 scale = Vector2(0.24999996, 0.24999996)
 texture = ExtResource("13_ey4eq")
-
-[node name="Enemy" parent="." unique_id=2087722262]
-position = Vector2(509, 52)
-
-[node name="Enemy2" parent="." unique_id=1299075938]
-position = Vector2(-250, 70)
 
 [connection signal="pressed" from="CharacterBody2D/Camera2D/Button" to="CharacterBody2D/Flan" method="_on_button_pressed"]

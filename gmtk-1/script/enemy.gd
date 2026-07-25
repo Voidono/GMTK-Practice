@@ -2,7 +2,7 @@ class_name Enemy
 extends CharacterBody2D
 
 @export var health: Health
-
+@onready var AnimatedSprite =  $AnimatedSprite2D
 func _ready() -> void:
 	add_to_group("enemies")
 	health.died.connect(_on_died)
@@ -13,3 +13,6 @@ func take_damage(amount: int) -> void:
 
 func _on_died() -> void:
 	queue_free()
+	
+func _physics_process(delta):
+	AnimatedSprite.play("Move")
