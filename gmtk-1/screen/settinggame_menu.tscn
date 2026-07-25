@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jimg0c5maedn"]
 
-[ext_resource type="Script" path="res://script/settinggame_menu.gd" id="1_njd6i"]
+[ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="1_njd6i"]
 
 [node name="settinggame menu" type="Control" unique_id=1701879429]
 layout_mode = 3
@@ -9,7 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_njd6i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1312191166]
 layer = 43
@@ -19,32 +18,37 @@ offset_right = 967.0
 offset_bottom = 559.0
 color = Color(0, 0, 0, 0.41568628)
 
+[node name="HoverPc" type="Sprite2D" parent="CanvasLayer/ColorRect" unique_id=715783263]
+position = Vector2(495, 282)
+scale = Vector2(2.6386137, 2.638614)
+texture = ExtResource("1_njd6i")
+
 [node name="HSeparator" type="HSlider" parent="CanvasLayer" unique_id=2127810322]
-offset_left = 321.0
-offset_top = 224.0
-offset_right = 830.0
-offset_bottom = 414.0
+offset_left = 419.0
+offset_top = 164.0
+offset_right = 697.0
+offset_bottom = 285.0
 max_value = 1.0
 step = 0.001
 value = 1.0
 
 [node name="Label" type="Label" parent="CanvasLayer/HSeparator" unique_id=1885529811]
 layout_mode = 0
-offset_left = -310.0
-offset_top = 19.0
-offset_right = -13.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 129
+offset_left = -225.0
+offset_top = 2.0
+offset_right = 55.651367
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 65
 text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer" unique_id=1932175635]
-offset_left = 320.0
-offset_top = 401.0
-offset_right = 835.0
-offset_bottom = 502.0
-theme_override_font_sizes/font_size = 65
+offset_left = 457.0
+offset_top = 279.0
+offset_right = 638.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 47
 selected = 0
 item_count = 2
 popup/item_0/text = "English"
@@ -55,9 +59,9 @@ popup/item_1/id = 1
 [node name="Label" type="Label" parent="CanvasLayer/OptionButton" unique_id=984653227]
 texture_filter = 1
 layout_mode = 0
-offset_left = -293.0
-offset_top = -8.0
-offset_right = -21.0
-offset_bottom = 101.0
-theme_override_font_sizes/font_size = 111
+offset_left = -188.0
+offset_top = 8.0
+offset_right = -18.31192
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 65
 text = "Language"
