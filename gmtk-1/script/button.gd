@@ -1,8 +1,8 @@
 extends Button
 
-signal close 
+signal closed
 
 func _on_pressed() -> void:
-	close.emit()
-	queue_free()
+	closed.emit()
+	get_parent().queue_free()
 	pass # Replace with function body.
