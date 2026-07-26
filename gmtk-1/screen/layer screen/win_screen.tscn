@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dh4mt05b21bg1"]
+
+[ext_resource type="Script" uid="uid://5dr1s1fjcook" path="res://script/win_screen.gd" id="1_hl0ta"]
+[ext_resource type="Texture2D" uid="uid://dj8cihhgm8byn" path="res://res/texture 1/Game UI Assets/Button/Button icon/refresh.png" id="1_s77h1"]
+[ext_resource type="Texture2D" uid="uid://cdqevhhsuyyi3" path="res://res/texture 1/Game UI Assets/Button/Button icon/Home.png" id="2_hl0ta"]
+
+[node name="Win screen" type="Control" unique_id=2106535288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hl0ta")
+metadata/_edit_horizontal_guides_ = [361.0, 457.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1138191685]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1620118459]
+offset_right = 966.0
+offset_bottom = 546.0
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2048822370]
+offset_left = 178.0
+offset_top = 74.0
+offset_right = 791.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 228
+text = "GAME OVER"
+
+[node name="chơi lại" type="Button" parent="CanvasLayer" unique_id=957804402]
+offset_left = 300.0
+offset_top = 358.0
+offset_right = 418.0
+offset_bottom = 461.0
+flat = true
+
+[node name="Refresh" type="Sprite2D" parent="CanvasLayer/chơi lại" unique_id=562571094]
+position = Vector2(59, 52)
+scale = Vector2(1.1547619, 1.1547619)
+texture = ExtResource("1_s77h1")
+
+[node name="quay về" type="Button" parent="CanvasLayer" unique_id=1592479840]
+offset_left = 513.0
+offset_top = 361.0
+offset_right = 609.0
+offset_bottom = 455.0
+flat = true
+
+[node name="Home" type="Sprite2D" parent="CanvasLayer/quay về" unique_id=1797267613]
+position = Vector2(50, 48)
+scale = Vector2(1.1309526, 1.1309526)
+texture = ExtResource("2_hl0ta")
+
+[connection signal="pressed" from="CanvasLayer/chơi lại" to="." method="_on_chơi_lại_pressed"]
+[connection signal="pressed" from="CanvasLayer/quay về" to="." method="_on_quay_về_pressed"]

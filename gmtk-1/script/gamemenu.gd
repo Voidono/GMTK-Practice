@@ -1,7 +1,7 @@
 extends Control
 
-const SETTING_MENU = preload("res://screen/settinggame_menu.tscn")
-const PAUSE_MENU_SCENE = preload("res://screen/gamemenu.tscn")
+const SETTING_MENU = preload("res://screen/layer screen/settinggame_menu.tscn")
+const PAUSE_MENU_SCENE = preload("res://screen/layer screen/gamemenu.tscn")
 
 signal game_resumed
 
