@@ -17,12 +17,8 @@ signal swung(hitbox: Node)
 @onready var sword: Sprite2D = get_node_or_null("Sword")
 @onready var swing_sound: AudioStreamPlayer2D = get_node_or_null("SwingSound")
 
-func swing(direction: Vector2) -> void:
-	_play_slash_effect()
-	
-	if swing_sound:
-		swing_sound.play()
-	
+
+
 var _combo_step := 0
 var _last_swing_time := -INF
 var _time_stop_active := false
@@ -35,7 +31,9 @@ func set_time_stop_active(active: bool) -> void:
 func swing(direction: Vector2) -> bool:
 	if _attack_in_progress:
 		return false
-
+	if swing_sound:
+		swing_sound.play()
+	
 	var now := Time.get_ticks_msec() * 0.001
 	if now - _last_swing_time > combo_reset_time:
 		_combo_step = 0

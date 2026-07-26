@@ -19,6 +19,7 @@ const SOUL_PICKUP_SCENE := preload("res://screen/Gameplay/SoulPickup.tscn")
 @export var hit_animation_duration: float = 0.30
 @export var soul_value: float = 7.0
 
+@onready var slime_jump: AudioStreamPlayer2D = $slimejump
 @onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var _melee_timer := 0.0
 var _projectile_timer := 0.0
@@ -84,7 +85,6 @@ func _physics_process(delta: float) -> void:
 	if is_boss and distance <= projectile_range and _projectile_timer <= 0.0:
 		_begin_projectile_attack(direction)
 		return
-
 	velocity = direction * move_speed * time_compensation
 	_play_animation(&"Move")
 	move_and_slide()

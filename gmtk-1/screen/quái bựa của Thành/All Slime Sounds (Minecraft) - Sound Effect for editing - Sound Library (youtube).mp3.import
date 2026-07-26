@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vpskh750vqw6"
+path="res://.godot/imported/All Slime Sounds (Minecraft) - Sound Effect for editing - Sound Library (youtube).mp3-88a24d69b09e18b847e15e9daab10ecf.mp3str"
+
+[deps]
+
+source_file="res://screen/quái bựa của Thành/All Slime Sounds (Minecraft) - Sound Effect for editing - Sound Library (youtube).mp3"
+dest_files=["res://.godot/imported/All Slime Sounds (Minecraft) - Sound Effect for editing - Sound Library (youtube).mp3-88a24d69b09e18b847e15e9daab10ecf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

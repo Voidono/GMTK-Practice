@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://dtofl3snbhkgt" path="res://res/Slime/idle/Slime6.png" id="8_aoklt"]
 [ext_resource type="Texture2D" uid="uid://dfx27hm423gpg" path="res://res/Slime/idle/Slime8.png" id="9_330fc"]
 [ext_resource type="Script" uid="uid://bupyyw5hqi64s" path="res://script/State/AttackState.gd" id="20_3hhui"]
-[ext_resource type="Texture2D" path="res://res/image/Slime_sus1.png" id="21_damaged_1"]
-[ext_resource type="Texture2D" path="res://res/image/Slime_sus2.png" id="22_damaged_2"]
+[ext_resource type="Texture2D" uid="uid://bnyykb5o4v5hp" path="res://res/image/Slime_sus1.png" id="21_damaged_1"]
+[ext_resource type="Texture2D" uid="uid://bfffqbvwxeh8t" path="res://res/image/Slime_sus2.png" id="22_damaged_2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
 animations = [{
@@ -101,7 +101,6 @@ script = ExtResource("1_a048r")
 health = NodePath("StateMachine/Health")
 move_speed = 70.0
 melee_range = 36.0
-melee_damage = 8
 melee_cooldown = 0.75
 soul_value = 6.0
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc86rqdi1ys5e"
+path="res://.godot/imported/slimejump.mp3-39c240b512eda913185c73ea509dc505.mp3str"
+
+[deps]
+
+source_file="res://sound track/slime/slimejump.mp3"
+dest_files=["res://.godot/imported/slimejump.mp3-39c240b512eda913185c73ea509dc505.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
