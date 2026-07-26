@@ -15,7 +15,14 @@ signal swung(hitbox: Node)
 @export var combo_reset_time: float = 1.25
 @onready var slash_effect: AnimatedSprite2D = get_node_or_null("SlashEffect")
 @onready var sword: Sprite2D = get_node_or_null("Sword")
+@onready var swing_sound: AudioStreamPlayer2D = get_node_or_null("SwingSound")
 
+func swing(direction: Vector2) -> void:
+	_play_slash_effect()
+	
+	if swing_sound:
+		swing_sound.play()
+	
 var _combo_step := 0
 var _last_swing_time := -INF
 var _time_stop_active := false
