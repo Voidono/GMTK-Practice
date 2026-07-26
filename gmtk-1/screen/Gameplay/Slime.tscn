@@ -111,10 +111,11 @@ radius = 24.083189
 collision_layer = 2
 script = ExtResource("1_icehw")
 health = NodePath("StateMachine/Health")
-move_speed = 38.0
-melee_range = 28.0
-melee_damage = 6
-melee_cooldown = 1.1
+move_speed = 70.0
+melee_range = 36.0
+melee_damage = 8
+melee_cooldown = 0.75
+soul_value = 6.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1326054836]
 sprite_frames = SubResource("SpriteFrames_4wrgo")
@@ -128,7 +129,7 @@ metadata/_custom_type_script = "uid://cafi4avmtrisk"
 
 [node name="Health" type="Node" parent="StateMachine" unique_id=772346872]
 script = ExtResource("18_x02j1")
-max_health = 50
+max_health = 45
 
 [node name="Chase" type="Node" parent="StateMachine" unique_id=1525840493 node_paths=PackedStringArray("enemy")]
 script = ExtResource("19_870l4")

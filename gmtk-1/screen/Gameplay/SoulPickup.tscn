@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://script/SoulPickup.gd" id="1_soul_script"]
+[ext_resource type="Texture2D" path="res://res/image/soul.png" id="2_soul_texture"]
+
+[node name="SoulPickup" type="Node2D"]
+z_index = 1
+script = ExtResource("1_soul_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_soul_texture")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

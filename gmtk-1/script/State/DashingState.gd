@@ -40,6 +40,7 @@ func enter() -> void:
 	_timer = dash_duration
 	_direction = player.last_movement_direction
 	_cooldown_remaining = dash_cooldown
+	player.set_dashing(true)
 	player.play_dash_effect(_direction)
 
 func physics_update(delta: float) -> void:
@@ -51,3 +52,7 @@ func physics_update(delta: float) -> void:
 	_timer -= player.get_real_delta(delta)
 	if _timer <= 0.0 and combat_state:
 		transition_requested.emit(combat_state)
+
+func exit() -> void:
+	if player:
+		player.set_dashing(false)
