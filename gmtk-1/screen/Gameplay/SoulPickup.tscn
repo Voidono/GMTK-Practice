@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://ca5g4mmbh268i"]
 
-[ext_resource type="Script" path="res://script/SoulPickup.gd" id="1_soul_script"]
-[ext_resource type="Texture2D" path="res://res/image/soul.png" id="2_soul_texture"]
+[ext_resource type="Script" uid="uid://hpd7mfwh1d5w" path="res://script/SoulPickup.gd" id="1_soul_script"]
+[ext_resource type="Texture2D" uid="uid://o228ln51jgo5" path="res://res/image/soul.png" id="2_soul_texture"]
 
-[node name="SoulPickup" type="Node2D"]
+[node name="SoulPickup" type="Node2D" unique_id=480785801]
 z_index = 1
 script = ExtResource("1_soul_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=343063646]
 texture = ExtResource("2_soul_texture")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)

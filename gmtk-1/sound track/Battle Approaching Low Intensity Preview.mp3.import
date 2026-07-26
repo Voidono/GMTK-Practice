@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rtcsnltxfgdw"
+path="res://.godot/imported/Battle Approaching Low Intensity Preview.mp3-0b847108c27a49e7cb5cb914c87446b8.mp3str"
+
+[deps]
+
+source_file="res://sound track/Battle Approaching Low Intensity Preview.mp3"
+dest_files=["res://.godot/imported/Battle Approaching Low Intensity Preview.mp3-0b847108c27a49e7cb5cb914c87446b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

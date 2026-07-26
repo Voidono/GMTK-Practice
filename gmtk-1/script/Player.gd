@@ -7,6 +7,7 @@ extends CharacterBody2D
 ## conflict over who's allowed to set velocity on a given frame.
 
 @export var speed: float = 150.0
+@export var damage_iframe_seconds: float = 0.4
 @onready var animation_player := $AnimationPlayer
 @onready var weapon_point: Marker2D = $WeaponPoint
 @onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -25,6 +26,8 @@ var last_movement_direction: Vector2 = Vector2.RIGHT
 ## attacking another, same as most top-down action games.
 var aim_direction: Vector2 = Vector2.RIGHT
 var is_dashing := false
+var _damage_iframe_remaining := 0.0
+var _step_cooldown := 0.0
 
 func _ready() -> void:
 	add_to_group("player")
@@ -36,8 +39,9 @@ func _ready() -> void:
 ## Duck-typed entry point enemy attacks call, same pattern as
 ## Enemy.take_damage() forwarding to its own Health component.
 func take_damage(amount: int) -> void:
-	if health and not is_dashing:
+	if health and not is_dashing and _damage_iframe_remaining <= 0.0:
 		health.take_damage(amount)
+		_damage_iframe_remaining = damage_iframe_seconds
 
 ## Called by Enemy on death (see enemy.gd's _on_died()) - killing
 ## enemies is the only way to buy back time.
@@ -55,10 +59,15 @@ func set_dashing(active: bool) -> void:
 func _on_died() -> void:
 	queue_free()
 func _physics_process(_delta: float) -> void:
+	_damage_iframe_remaining = maxf(_damage_iframe_remaining - get_real_delta(_delta), 0.0)
+	_step_cooldown = maxf(_step_cooldown - get_real_delta(_delta), 0.0)
 	input_vector = Input.get_vector("right", "left", "up", "down")
 	if input_vector.length() > 0.0:
 		last_movement_direction = input_vector.normalized()
 	_update_movement_animation()
+	if input_vector != Vector2.ZERO and _step_cooldown <= 0.0:
+		AudioManager.play_player_step(global_position)
+		_step_cooldown = 0.34
 
 	aim_direction = (get_global_mouse_position() - global_position).normalized()
 	if aim_direction != Vector2.ZERO:

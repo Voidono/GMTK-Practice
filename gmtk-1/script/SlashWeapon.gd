@@ -15,7 +15,6 @@ signal swung(hitbox: Node)
 @export var combo_reset_time: float = 1.25
 @onready var slash_effect: AnimatedSprite2D = get_node_or_null("SlashEffect")
 @onready var sword: Sprite2D = get_node_or_null("Sword")
-@onready var swing_sound: AudioStreamPlayer2D = get_node_or_null("SwingSound")
 
 var _combo_step := 0
 var _last_swing_time := -INF
@@ -27,13 +26,9 @@ func set_time_stop_active(active: bool) -> void:
 	_set_effect_real_time_speed()
 
 func swing(direction: Vector2) -> bool:
-	
-	if swing_sound:
-		swing_sound.play()
 	if _attack_in_progress:
 		return false
-	if swing_sound:
-		swing_sound.play()
+	AudioManager.play_slash()
 	
 	var now := Time.get_ticks_msec() * 0.001
 	if now - _last_swing_time > combo_reset_time:

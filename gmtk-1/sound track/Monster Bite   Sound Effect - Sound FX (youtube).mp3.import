@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwsdpn8yerl2o"
+path="res://.godot/imported/Monster Bite   Sound Effect - Sound FX (youtube).mp3-db1b44f36d40842dee40f3ffaccc66f5.mp3str"
+
+[deps]
+
+source_file="res://sound track/Monster Bite   Sound Effect - Sound FX (youtube).mp3"
+dest_files=["res://.godot/imported/Monster Bite   Sound Effect - Sound FX (youtube).mp3-db1b44f36d40842dee40f3ffaccc66f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

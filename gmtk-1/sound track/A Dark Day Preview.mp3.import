@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2yltnpolqrgn"
+path="res://.godot/imported/A Dark Day Preview.mp3-406ef0dd98bbb49d610d7bf545a3b4b2.mp3str"
+
+[deps]
+
+source_file="res://sound track/A Dark Day Preview.mp3"
+dest_files=["res://.godot/imported/A Dark Day Preview.mp3-406ef0dd98bbb49d610d7bf545a3b4b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

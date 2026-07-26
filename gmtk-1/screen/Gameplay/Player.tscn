@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://drkrru4pxmb1w" path="res://screen/Gameplay/TimeSlowAbility.tscn" id="34_time_slow"]
 [ext_resource type="Script" uid="uid://pjmjln2c76td" path="res://script/State/CountdownHealth.gd" id="39_a243s"]
 [ext_resource type="Texture2D" uid="uid://dyidkncnhmymd" path="res://res/image/Dash_effect1.png" id="40_dash_1"]
+[ext_resource type="Texture2D" uid="uid://d282p8j5stknv" path="res://res/image/main_sus1.png" id="40_fi71o"]
+[ext_resource type="Texture2D" uid="uid://c6qxgqr5h1nyx" path="res://res/image/main_sus2.png" id="41_4n630"]
 [ext_resource type="Texture2D" uid="uid://cgfgqu7hkpyjt" path="res://res/image/Dash_effect2.png" id="41_dash_2"]
 [ext_resource type="Texture2D" uid="uid://emswr7f01407" path="res://res/image/Dash_effect3.png" id="42_dash_3"]
 [ext_resource type="Texture2D" uid="uid://b8llmakvd0cm3" path="res://res/image/Dash_effect4.png" id="43_dash_4"]
@@ -242,6 +244,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("40_fi71o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4n630")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fi71o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4n630")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fi71o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4n630")
+}],
+"loop": 1,
+"name": &"iFrame",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_udy8y")
 }, {
 "duration": 1.0,
@@ -375,7 +400,7 @@ volume_db = 8.465
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=688169206]
 sprite_frames = SubResource("SpriteFrames_3dh33")
-animation = &"walk"
+animation = &"iFrame"
 
 [node name="DashEffect" type="AnimatedSprite2D" parent="." unique_id=258647597]
 visible = false

@@ -90,7 +90,7 @@ is_boss = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1326054836]
 sprite_frames = SubResource("SpriteFrames_4wrgo")
-animation = &"Attack"
+animation = &"Move"
 
 [node name="StateMachine" type="Node" parent="." unique_id=310941450 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("17_iymks")

@@ -2,18 +2,24 @@
 
 [ext_resource type="Script" uid="uid://d3y533mpf377y" path="res://script/enemy.gd" id="1_enemy"]
 [ext_resource type="Script" uid="uid://c2umuyhgbgxtp" path="res://script/Health.gd" id="2_health"]
-[ext_resource type="Texture2D" uid="uid://dpo42oiwj1yvh" path="res://res/image/BossIDLE1.png" id="3_idle1"]
-[ext_resource type="Texture2D" uid="uid://cgsstvalnor5j" path="res://res/image/BossIDLE2.png" id="4_idle2"]
 [ext_resource type="Texture2D" uid="uid://dmqygkbukqcm1" path="res://res/image/Boss_Punch1.png" id="5_punch1"]
 [ext_resource type="Texture2D" uid="uid://bib5tidrcy5k0" path="res://res/image/Boss_Punch2.png" id="6_punch2"]
 [ext_resource type="Texture2D" uid="uid://b6mw4n5ktlirb" path="res://res/image/boss_sus1.png" id="6_y1fo8"]
 [ext_resource type="Texture2D" uid="uid://duo1md2er4l6y" path="res://res/image/boss_sus2.png" id="7_n8aqo"]
 [ext_resource type="PackedScene" path="res://screen/Gameplay/EnemyProjectile.tscn" id="7_projectile"]
+[ext_resource type="Texture2D" uid="uid://kuhjftyueg8r" path="res://res/image/Bossleft.png" id="8_nbphm"]
 [ext_resource type="PackedScene" uid="uid://du62jb4wgyte8" path="res://screen/Gameplay/Slime.tscn" id="8_slime"]
 [ext_resource type="Texture2D" uid="uid://bifaye5xjsjk2" path="res://res/image/boss_1.png" id="9_move1"]
+[ext_resource type="Texture2D" uid="uid://dq074710v2a6h" path="res://res/image/Bossleft2.png" id="9_xda2i"]
+[ext_resource type="Texture2D" uid="uid://0sys61bd4fbe" path="res://res/image/Bossleft3.png" id="10_ckfbl"]
 [ext_resource type="Texture2D" uid="uid://0r4ihpc53m74" path="res://res/image/boss_2.png" id="10_move2"]
 [ext_resource type="Texture2D" uid="uid://maplbnr4v3jw" path="res://res/image/boss_3.png" id="11_move3"]
+[ext_resource type="Texture2D" uid="uid://cewvnhnngjuok" path="res://res/image/BossLeft4.png" id="11_mt5r4"]
+[ext_resource type="Texture2D" uid="uid://bh54fv7wud3ko" path="res://res/image/bossright.png" id="12_4q4pv"]
 [ext_resource type="Texture2D" uid="uid://dbgux27v6qiw3" path="res://res/image/boss_4.png" id="12_move4"]
+[ext_resource type="Texture2D" uid="uid://b2kuo6g5sfro0" path="res://res/image/Bossright2.png" id="13_6j6dx"]
+[ext_resource type="Texture2D" uid="uid://banhkcrdfjug4" path="res://res/image/Bossright3.png" id="14_ia7yw"]
+[ext_resource type="Texture2D" uid="uid://dwrt42bdh37ni" path="res://res/image/Bossright4.png" id="15_s443c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
 animations = [{
@@ -53,13 +59,36 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_idle1")
+"texture": ExtResource("8_nbphm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_idle2")
+"texture": ExtResource("9_xda2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ckfbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mt5r4")
 }],
 "loop": 1,
-"name": &"Move",
+"name": &"MoveLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4q4pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6j6dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ia7yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s443c")
+}],
+"loop": 1,
+"name": &"MoveRight",
 "speed": 4.0
 }, {
 "frames": [{
@@ -100,8 +129,8 @@ soul_value = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1197006185]
 sprite_frames = SubResource("SpriteFrames_boss")
-animation = &"Damaged"
-autoplay = "Move"
+animation = &"MoveLeft"
+autoplay = "MoveRight"
 
 [node name="Health" type="Node" parent="." unique_id=303259417]
 script = ExtResource("2_health")

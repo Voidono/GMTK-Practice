@@ -80,3 +80,6 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 20
 text = "BOSS IN 05:00"
 script = ExtResource("8_match_timer_script")
+
+[node name="Boss" parent="." unique_id=536690979 instance=ExtResource("6_boss")]
+position = Vector2(490, 330)

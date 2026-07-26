@@ -3,7 +3,7 @@ extends Node2D
 
 @export var pickup_range: float = 32.0
 @export var lifetime: float = 15.0
-@export var max_heal_amount: float = 5.0
+@export var max_heal_amount: float = 1.0
 
 var value: float = 7.0
 var _age := 0.0
