@@ -15,6 +15,38 @@
 [ext_resource type="Texture2D" uid="uid://b25c3kwl1fsgt" path="res://res/image/slash animation/Slash 3.png" id="16_slash_3"]
 [ext_resource type="Texture2D" uid="uid://cofhojo3cuplm" path="res://res/image/slash animation/Slash 4.png" id="17_slash_4"]
 [ext_resource type="Texture2D" uid="uid://cy7b2h7rhhdlo" path="res://res/image/slash animation/Slash 5.png" id="18_slash_5"]
+[ext_resource type="Texture2D" uid="uid://pv45m1w5vhv" path="res://res/image/Upslash1.png" id="19_upslash_1"]
+[ext_resource type="Texture2D" uid="uid://d1yq54psn0ra0" path="res://res/image/Upslash2.png" id="20_upslash_2"]
+[ext_resource type="Texture2D" uid="uid://1mgqakkq7cvs" path="res://res/image/Upslash3.png" id="21_upslash_3"]
+[ext_resource type="Texture2D" uid="uid://dmk4scliyn7pp" path="res://res/image/Upslash4.png" id="22_upslash_4"]
+[ext_resource type="Texture2D" uid="uid://dgbp0nu8lao1a" path="res://res/image/Upslash5.png" id="23_upslash_5"]
+[ext_resource type="Texture2D" uid="uid://w5usrfdlh8t2" path="res://res/image/Sword_sus1.png" id="24_sus_1"]
+[ext_resource type="Texture2D" uid="uid://cbhydx43ylcms" path="res://res/image/slashEF1.png" id="24_xu4pu"]
+[ext_resource type="Texture2D" uid="uid://cv54af65jgtan" path="res://res/image/slashEF2.png" id="25_a243s"]
+[ext_resource type="Texture2D" uid="uid://dofqp2glqdy1n" path="res://res/image/Sword_sus2.png" id="25_sus_2"]
+[ext_resource type="Texture2D" uid="uid://ntvvlrerrag2" path="res://res/image/slashEF3.png" id="26_3rd31"]
+[ext_resource type="Texture2D" uid="uid://crlot1j773701" path="res://res/image/Sword_sus3.png" id="26_sus_3"]
+[ext_resource type="Texture2D" uid="uid://dguyyf805i6j6" path="res://res/image/Sword_sus4.png" id="27_sus_4"]
+[ext_resource type="Texture2D" uid="uid://iosm18lauaqw" path="res://res/image/slashEF4.png" id="27_x6lfk"]
+[ext_resource type="Texture2D" uid="uid://dhn7bbccd1gu2" path="res://res/image/slashEF5.png" id="28_h78yj"]
+[ext_resource type="Texture2D" uid="uid://o08cfcgt2ksu" path="res://res/image/Sword_sus5.png" id="28_sus_5"]
+[ext_resource type="Texture2D" uid="uid://djuelal3hu8sv" path="res://res/image/Sword_sus6.png" id="29_sus_6"]
+[ext_resource type="Texture2D" uid="uid://br0w0pp5xx5bk" path="res://res/image/SworldEF1.png" id="29_vanqq"]
+[ext_resource type="Texture2D" uid="uid://hcwsnfanff1b" path="res://res/image/SworldEF2.png" id="30_bsm67"]
+[ext_resource type="Texture2D" uid="uid://dcdbaw7bu11i6" path="res://res/image/SworldEF3.png" id="31_c3000"]
+[ext_resource type="Texture2D" uid="uid://m21fomh4ex6q" path="res://res/image/Sword_susEF2.png" id="31_ef_2"]
+[ext_resource type="Texture2D" uid="uid://cmvi5ylls6px3" path="res://res/image/Sword_susEF3.png" id="32_ef_3"]
+[ext_resource type="Texture2D" uid="uid://cg85fgjo8qqtk" path="res://res/image/SworldEF4.png" id="32_qt1mc"]
+[ext_resource type="Texture2D" uid="uid://e1fe7w2e0frd" path="res://res/image/SworldEF5.png" id="33_5047w"]
+[ext_resource type="Texture2D" uid="uid://cselx611uqqm0" path="res://res/image/Sword_susEF4.png" id="33_ef_4"]
+[ext_resource type="PackedScene" uid="uid://drkrru4pxmb1w" path="res://screen/Gameplay/TimeSlowAbility.tscn" id="34_time_slow"]
+[ext_resource type="Script" uid="uid://pjmjln2c76td" path="res://script/State/CountdownHealth.gd" id="39_a243s"]
+[ext_resource type="Texture2D" uid="uid://dyidkncnhmymd" path="res://res/image/Dash_effect1.png" id="40_dash_1"]
+[ext_resource type="Texture2D" uid="uid://cgfgqu7hkpyjt" path="res://res/image/Dash_effect2.png" id="41_dash_2"]
+[ext_resource type="Texture2D" uid="uid://emswr7f01407" path="res://res/image/Dash_effect3.png" id="42_dash_3"]
+[ext_resource type="Texture2D" uid="uid://b8llmakvd0cm3" path="res://res/image/Dash_effect4.png" id="43_dash_4"]
+[ext_resource type="Texture2D" uid="uid://wuqxop3cq88y" path="res://res/image/Dash_effect5.png" id="44_dash_5"]
+[ext_resource type="Texture2D" uid="uid://dfihekri5ykk2" path="res://res/image/Dash_effect6.png" id="45_dash_6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wrgo"]
 radius = 17.117243
@@ -35,8 +67,111 @@ animations = [{
 "texture": ExtResource("18_slash_5")
 }],
 "loop": 0,
-"name": &"slash",
+"name": &"slash_1",
 "speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_upslash_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_upslash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_upslash_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_upslash_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_upslash_5")
+}],
+"loop": 0,
+"name": &"slash_2",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_sus_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sus_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sus_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sus_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sus_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sus_6")
+}],
+"loop": 0,
+"name": &"slash_3",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_xu4pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_a243s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3rd31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x6lfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_h78yj")
+}],
+"loop": 0,
+"name": &"slash_time_stop_1",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_vanqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bsm67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c3000")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qt1mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5047w")
+}],
+"loop": 0,
+"name": &"slash_time_stop_2",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_5047w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ef_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ef_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ef_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5047w")
+}],
+"loop": 0,
+"name": &"slash_time_stop_3",
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peaon"]
@@ -158,9 +293,36 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dash_effect"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_dash_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dash_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dash_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dash_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dash_6")
+}],
+"loop": 0,
+"name": &"dash",
+"speed": 24.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=775815707 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_i3kcc")
+health = NodePath("CountdownHealth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370688901]
 position = Vector2(1, -3)
@@ -184,26 +346,29 @@ dashing_state = NodePath("../Dashing")
 script = ExtResource("4_3dh33")
 player = NodePath("../..")
 combat_state = NodePath("../Combat")
+dash_speed = 650.0
+dash_cooldown = 0.45
 
 [node name="WeaponPoint" type="Marker2D" parent="." unique_id=318796674]
-position = Vector2(11, 2)
 script = ExtResource("6_hi50c")
 hitbox_scene = ExtResource("7_ahu3t")
 
 [node name="Sword" type="Sprite2D" parent="WeaponPoint" unique_id=57710878]
 z_index = 1
-position = Vector2(17, -17)
+position = Vector2(40, -0.9999981)
+rotation = 0.76953316
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("14_sword")
 
 [node name="SlashEffect" type="AnimatedSprite2D" parent="WeaponPoint" unique_id=388463378]
 visible = false
 z_index = 2
-position = Vector2(22, 0)
+position = Vector2(35, 0)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_slash_effect")
-animation = &"slash"
-frame = 3
+animation = &"slash_time_stop_3"
+
+[node name="TimeSlowAbility" parent="." unique_id=83589983 instance=ExtResource("34_time_slow")]
 
 [node name="SwingSound" type="AudioStreamPlayer2D" parent="WeaponPoint" unique_id=1229080016]
 stream = ExtResource("13_mkrjl")
@@ -213,9 +378,23 @@ volume_db = 8.465
 sprite_frames = SubResource("SpriteFrames_3dh33")
 animation = &"walk"
 
+[node name="DashEffect" type="AnimatedSprite2D" parent="." unique_id=258647597]
+visible = false
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_dash_effect")
+animation = &"dash"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=616917517]
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=611424540]
 stream = ExtResource("15_b5srv")
+[node name="CountdownHealth" type="Node" parent="." unique_id=1876108261 node_paths=PackedStringArray("time_slow_ability")]
+script = ExtResource("39_a243s")
+max_time = 75.0
+passive_drain_rate = 0.75
+ability_use_penalty = 2.25
+time_slow_ability = NodePath("../TimeSlowAbility")
+metadata/_custom_type_script = "uid://pjmjln2c76td"
 
 [connection signal="animation_finished" from="WeaponPoint/SlashEffect" to="WeaponPoint" method="_on_slash_effect_animation_finished"]
+[connection signal="animation_finished" from="DashEffect" to="DashEffect" method="hide"]

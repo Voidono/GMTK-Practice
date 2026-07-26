@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hfeu7gnktcdx"]
+
+[ext_resource type="Script" uid="uid://ccc6cp756b56n" path="res://script/projectile.gd" id="1_vjnaf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15eay"]
+
+[node name="Projectile" type="Area2D" unique_id=1552765377]
+script = ExtResource("1_vjnaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1884468348]
+sprite_frames = SubResource("SpriteFrames_4wrgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=891089397]
+shape = SubResource("RectangleShape2D_15eay")

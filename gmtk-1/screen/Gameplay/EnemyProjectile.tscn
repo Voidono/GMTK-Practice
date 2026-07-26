@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://script/projectile.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://res/image/bullet1.png" id="2_bullet1"]
+[ext_resource type="Texture2D" path="res://res/image/bullet2.png" id="3_bullet2"]
+[ext_resource type="Texture2D" path="res://res/image/bullet3.png" id="4_bullet3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bullet"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("2_bullet1")}, {"duration": 1.0, "texture": ExtResource("3_bullet2")}, {"duration": 1.0, "texture": ExtResource("4_bullet3")}],
+"loop": 1,
+"name": &"fly",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape_bullet"]
+radius = 10.0
+
+[node name="EnemyProjectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_script")
+speed = 180.0
+damage = 16
+lifetime = 1.8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bullet")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape_bullet")
