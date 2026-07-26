@@ -28,8 +28,6 @@ corner_radius_bottom_left = 2
 metadata/_edit_vertical_guides_ = [-1506.0, 1506.0]
 metadata/_edit_horizontal_guides_ = [999.0, -1027.0]
 
-<<<<<<< HEAD
-=======
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1972699481]
 texture_filter = 1
 tile_set = SubResource("TileSet_bx8n8")
@@ -38,7 +36,6 @@ tile_set = SubResource("TileSet_bx8n8")
 texture_filter = 1
 tile_set = SubResource("TileSet_5iqjx")
 
->>>>>>> eaa5abf4100515c718ece45551333aadec0f92f2
 [node name="CharacterBody2D" parent="." unique_id=775815707 instance=ExtResource("4_bd45l")]
 position = Vector2(1, 7)
 
