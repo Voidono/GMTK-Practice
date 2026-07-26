@@ -2,6 +2,8 @@ extends Node
 
 const MENU_MUSIC := preload("res://sound track/A Dark Day Preview.mp3")
 const MAP_MUSIC := preload("res://sound track/Battle Approaching Low Intensity Preview.mp3")
+const VICTORY_MUSIC := preload("res://sound track/Victory Sound Effect - Der Test (youtube).mp3")
+const LOSING_HORN := preload("res://sound track/The Price is Right Losing Horn - Sound Effect (HD) - Gaming Sound FX (youtube) (1).mp3")
 const CLICK := preload("res://sound track/click.mp3")
 const SLASH := preload("res://sound track/player/tieesng chém.mp3")
 const SLIME_HURT := preload("res://sound track/slime/slime slashed.mp3")
@@ -65,17 +67,25 @@ func play_slime_jump(position: Vector2) -> void:
 
 func _set_scene_music(scene_path: String) -> void:
 	var track: AudioStream = null
+	var should_loop := false
 	if scene_path.ends_with("/menu.tscn"):
 		track = MENU_MUSIC
+		should_loop = true
 	elif scene_path.ends_with("/map1.tscn"):
 		track = MAP_MUSIC
+		should_loop = true
+	elif scene_path.ends_with("/win_screen.tscn"):
+		track = VICTORY_MUSIC
+		should_loop = true
+	elif scene_path.ends_with("/lose_screen.tscn"):
+		track = LOSING_HORN
 	if _music.stream == track:
 		return
 	_music.stop()
 	_music.stream = track
 	if track:
 		if track is AudioStreamMP3:
-			track.loop = true
+			track.loop = should_loop
 		_music.play()
 
 func _play_effect(stream: AudioStream) -> void:

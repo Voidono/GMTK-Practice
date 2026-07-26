@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqls1xce5xggt"
+path="res://.godot/imported/The Price is Right Losing Horn - Sound Effect (HD) - Gaming Sound FX (youtube) (1).mp3-9ae12a89ddc1c55aa26c960172b2566e.mp3str"
+
+[deps]
+
+source_file="res://sound track/The Price is Right Losing Horn - Sound Effect (HD) - Gaming Sound FX (youtube) (1).mp3"
+dest_files=["res://.godot/imported/The Price is Right Losing Horn - Sound Effect (HD) - Gaming Sound FX (youtube) (1).mp3-9ae12a89ddc1c55aa26c960172b2566e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

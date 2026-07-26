@@ -1,5 +1,7 @@
 class_name Player
 extends CharacterBody2D
+
+const LOSE_SCREEN_SCENE := "res://screen/layer screen/lose_screen.tscn"
 ## Deliberately thin: reads raw input and mouse-aim every frame and
 ## exposes them as plain data. Movement itself (move_and_slide) now
 ## belongs to whichever State is active - CombatState drives normal
@@ -57,7 +59,7 @@ func set_dashing(active: bool) -> void:
 	is_dashing = active
 
 func _on_died() -> void:
-	queue_free()
+	get_tree().change_scene_to_file(LOSE_SCREEN_SCENE)
 func _physics_process(_delta: float) -> void:
 	_damage_iframe_remaining = maxf(_damage_iframe_remaining - get_real_delta(_delta), 0.0)
 	_step_cooldown = maxf(_step_cooldown - get_real_delta(_delta), 0.0)

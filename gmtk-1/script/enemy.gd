@@ -2,6 +2,7 @@ class_name Enemy
 extends CharacterBody2D
 
 const SOUL_PICKUP_SCENE := preload("res://screen/Gameplay/SoulPickup.tscn")
+const WIN_SCREEN_SCENE := "res://screen/layer screen/win_screen.tscn"
 const MONSTER_STEP := preload("res://sound track/monster step.mp3")
 const BOSS_PUNCH := preload("res://sound track/punch.mp3")
 const BOSS_GUN := preload("res://sound track/slime gun.mp3")
@@ -203,6 +204,9 @@ func _play_one_shot(stream: AudioStream) -> void:
 	sound.play()
 
 func _on_died() -> void:
+	if is_boss:
+		get_tree().change_scene_to_file(WIN_SCREEN_SCENE)
+		return
 	_drop_soul()
 	queue_free()
 

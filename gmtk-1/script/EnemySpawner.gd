@@ -13,10 +13,10 @@ signal match_time_changed(elapsed: float, duration: float)
 signal boss_spawned(boss: Node2D)
 
 @export var enemy_scene: PackedScene
-@export var enemy_scene1: PackedScene
 @export var boss_scene: PackedScene
 @export var min_radius: float = 210.0   # no-spawn buffer around the player
 @export var max_radius: float = 360.0   # outer edge of the spawn zone
+@export var spawn_start_delay: float = 0.0 # real seconds before this spawner begins creating enemies
 @export var spawn_interval: float = 1.45
 @export var minimum_spawn_interval: float = 0.70
 @export var spawn_interval_reduction_per_minute: float = 0.15
@@ -45,8 +45,9 @@ func _ready() -> void:
 	if show_debug_zone:
 		queue_redraw()
 
-	for i in initial_spawn_count:
-		_try_spawn()
+	if spawn_start_delay <= 0.0:
+		for i in initial_spawn_count:
+			_try_spawn()
 	match_time_changed.emit(match_elapsed, boss_spawn_delay)
 
 func _process(delta: float) -> void:
@@ -60,6 +61,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if has_spawned_boss and stop_spawning_after_boss:
+		return
+	if match_elapsed < spawn_start_delay:
 		return
 	_spawn_timer -= delta
 	if _spawn_timer <= 0.0:

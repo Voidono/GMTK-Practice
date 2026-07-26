@@ -4,7 +4,7 @@ extends Control
 
 
 func _on_chơi_lại_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://screen/map1.tscn")
 
 
 

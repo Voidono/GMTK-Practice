@@ -26,6 +26,7 @@ corner_radius_bottom_left = 2
 
 [node name="CharacterBody2D" parent="." unique_id=775815707 instance=ExtResource("1_s0hea")]
 position = Vector2(203, 140)
+collision_mask = 2
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1699710776]
 script = ExtResource("2_146xj")
@@ -34,6 +35,7 @@ boss_scene = ExtResource("6_boss")
 
 [node name="Badger" parent="." unique_id=1352991676 instance=ExtResource("5_badger")]
 position = Vector2(500, 180)
+collision_mask = 1
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=206222732]
 
@@ -83,3 +85,4 @@ script = ExtResource("8_match_timer_script")
 
 [node name="Boss" parent="." unique_id=536690979 instance=ExtResource("6_boss")]
 position = Vector2(490, 330)
+collision_mask = 1

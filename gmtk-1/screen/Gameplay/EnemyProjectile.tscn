@@ -17,7 +17,8 @@ animations = [{
 radius = 10.0
 
 [node name="EnemyProjectile" type="Area2D"]
-collision_layer = 4
+# Enemy hitbox: detects the player body, but Areas never create solid movement collisions.
+collision_layer = 8
 collision_mask = 1
 script = ExtResource("1_script")
 speed = 180.0
