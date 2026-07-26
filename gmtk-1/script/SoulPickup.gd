@@ -3,6 +3,7 @@ extends Node2D
 
 @export var pickup_range: float = 32.0
 @export var lifetime: float = 15.0
+@export var max_heal_amount: float = 5.0
 
 var value: float = 7.0
 var _age := 0.0
@@ -25,5 +26,5 @@ func _physics_process(delta: float) -> void:
 	var player := get_tree().get_first_node_in_group("player") as Node2D
 	if is_instance_valid(player) and global_position.distance_to(player.global_position) <= pickup_range:
 		if player.has_method("collect_soul"):
-			player.collect_soul(value)
+			player.collect_soul(minf(value, max_heal_amount))
 		queue_free()

@@ -53,9 +53,7 @@ func set_dashing(active: bool) -> void:
 	is_dashing = active
 
 func _on_died() -> void:
-	# No game-over/respawn flow built yet - this is just the hook.
-	# Wire whatever you want here: reload the scene, show a menu, etc.
-	push_warning("Player died - no game-over flow implemented yet.")
+	queue_free()
 func _physics_process(_delta: float) -> void:
 	input_vector = Input.get_vector("right", "left", "up", "down")
 	if input_vector.length() > 0.0:
