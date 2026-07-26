@@ -86,6 +86,7 @@ radius = 13.038404
 collision_layer = 2
 script = ExtResource("1_pig6a")
 health = NodePath("StateMachine/Health")
+is_boss = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1326054836]
 sprite_frames = SubResource("SpriteFrames_4wrgo")

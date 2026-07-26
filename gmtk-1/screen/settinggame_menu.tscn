@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://wkr05mgoqtu6"]
+
+[ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="1_njd6i"]
+[ext_resource type="Texture2D" uid="uid://c4a4br6ok8m5r" path="res://res/texture 1/Game UI Assets/Button/Button icon/exit.png" id="2_wie8f"]
+[ext_resource type="Script" uid="uid://b7lu7sjb177nh" path="res://script/button.gd" id="3_08qjp"]
+
+[node name="settinggame menu" type="Control" unique_id=1701879429]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1312191166]
+layer = 43
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=976766624]
+offset_right = 967.0
+offset_bottom = 559.0
+color = Color(0, 0, 0, 0.41568628)
+
+[node name="HoverPc" type="Sprite2D" parent="CanvasLayer/ColorRect" unique_id=715783263]
+position = Vector2(495, 282)
+scale = Vector2(2.6386137, 2.638614)
+texture = ExtResource("1_njd6i")
+
+[node name="HSeparator" type="HSlider" parent="CanvasLayer" unique_id=2127810322]
+offset_left = 419.0
+offset_top = 164.0
+offset_right = 697.0
+offset_bottom = 285.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HSeparator" unique_id=1885529811]
+layout_mode = 0
+offset_left = -225.0
+offset_top = 2.0
+offset_right = 55.651367
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 65
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer" unique_id=1932175635]
+offset_left = 457.0
+offset_top = 279.0
+offset_right = 638.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 47
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Tiếng Việt"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/OptionButton" unique_id=984653227]
+texture_filter = 1
+layout_mode = 0
+offset_left = -188.0
+offset_top = 8.0
+offset_right = -18.31192
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 65
+text = "Language"
+
+[node name="Exit" type="Sprite2D" parent="CanvasLayer" unique_id=501714010]
+position = Vector2(70, 56.000015)
+scale = Vector2(0.6666667, 0.6666667)
+texture = ExtResource("2_wie8f")
+
+[node name="Button" type="Button" parent="CanvasLayer/Exit" unique_id=768358207]
+anchors_preset = -1
+anchor_left = -0.036000002
+offset_left = -38.975998
+offset_top = -34.500027
+offset_right = 38.999985
+offset_bottom = 37.499973
+flat = true
+script = ExtResource("3_08qjp")
+
+[connection signal="pressed" from="CanvasLayer/Exit/Button" to="CanvasLayer/Exit/Button" method="_on_pressed"]
