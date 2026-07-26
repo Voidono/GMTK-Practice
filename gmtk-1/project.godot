@@ -13,7 +13,6 @@ config_version=5
 config/name="GMTK 1"
 run/main_scene="uid://i4lvenyviqm3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-
 config/icon="res://icon.svg"
 
 [audio]
@@ -23,7 +22,6 @@ buses/default_bus_layout="uid://dvnlcxhckcc4q"
 [autoload]
 
 AudioManager="*res://script/AudioManager.gd"
-_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [display]
 

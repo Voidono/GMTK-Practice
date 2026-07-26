@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c1t3i7dp4ddmq"]
+
+[ext_resource type="Script" uid="uid://csv6jf4lh8f38" path="res://script/tutorialmanager.gd" id="1_t4juu"]
+
+[node name="tutorialmanager" type="CanvasLayer" unique_id=488488018]
+script = ExtResource("1_t4juu")
+
+[node name="TutorialLabel" type="Label" parent="." unique_id=2041105537]
+offset_top = 430.0
+offset_right = 256.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 60
+
+[node name="TutorialTimer" type="Timer" parent="." unique_id=1235614843]
