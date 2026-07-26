@@ -368,11 +368,11 @@ scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_slash_effect")
 animation = &"slash_time_stop_3"
 
-[node name="TimeSlowAbility" parent="." unique_id=83589983 instance=ExtResource("34_time_slow")]
-
 [node name="SwingSound" type="AudioStreamPlayer2D" parent="WeaponPoint" unique_id=1229080016]
 stream = ExtResource("13_mkrjl")
 volume_db = 8.465
+
+[node name="TimeSlowAbility" parent="." unique_id=83589983 instance=ExtResource("34_time_slow")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=688169206]
 sprite_frames = SubResource("SpriteFrames_3dh33")
@@ -388,6 +388,7 @@ animation = &"dash"
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=611424540]
 stream = ExtResource("15_b5srv")
+
 [node name="CountdownHealth" type="Node" parent="." unique_id=1876108261 node_paths=PackedStringArray("time_slow_ability")]
 script = ExtResource("39_a243s")
 max_time = 75.0
