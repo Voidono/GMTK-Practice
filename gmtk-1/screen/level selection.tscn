@@ -582,6 +582,36 @@ theme_override_font_sizes/font_size = 135
 text = "1"
 flat = true
 
+[node name="Button3" type="Sprite2D" parent="." unique_id=12891919]
+position = Vector2(482.00006, 276)
+scale = Vector2(2.1547616, 1.6904761)
+texture = ExtResource("3_47rko")
+
+[node name="level 2" type="Button" parent="." unique_id=121700113]
+offset_left = 400.0
+offset_top = 212.0
+offset_right = 567.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 153
+text = "2"
+flat = true
+
+[node name="Button4" type="Sprite2D" parent="." unique_id=1110728742]
+position = Vector2(798, 278.99997)
+scale = Vector2(2.1547616, 1.6904761)
+texture = ExtResource("3_47rko")
+
+[node name="level 3" type="Button" parent="." unique_id=1389293741]
+offset_left = 716.0
+offset_top = 215.0
+offset_right = 883.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 147
+text = "3"
+flat = true
+
 [node name="Button" type="Button" parent="." unique_id=1894470348]
 offset_left = 41.0
 offset_top = 31.0
@@ -593,15 +623,6 @@ texture_filter = 1
 position = Vector2(35, 34)
 scale = Vector2(0.9047619, 0.9047619)
 texture = ExtResource("2_b5bpt")
-
-[node name="Label" type="Label" parent="." unique_id=859747489]
-offset_left = 376.0
-offset_top = 173.0
-offset_right = 948.0
-offset_bottom = 434.0
-theme_override_font_sizes/font_size = 116
-text = "NEW MAP 
-COMING SOON . . ."
 
 [connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

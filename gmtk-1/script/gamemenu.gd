@@ -18,15 +18,19 @@ func _on_resume_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	var setting_menu = SETTING_MENU.instantiate()
+	
 	get_parent().add_child(setting_menu)
-
+	
 	if setting_menu.has_signal("closed"):
 		setting_menu.closed.connect(_on_setting_closed)
+	
+	queue_free()
 
-	hide()  # was: queue_free()
+func _on_setting_closed():
+	# Tạo lại Pause Menu
+	var new_pause = PAUSE_MENU_SCENE.instantiate()
+	get_parent().add_child(new_pause)
 
-func _on_setting_closed() -> void:
-	show()
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
 	queue_free()
