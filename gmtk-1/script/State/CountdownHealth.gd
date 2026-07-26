@@ -56,9 +56,12 @@ func take_damage(amount: int) -> void:
 
 ## Called by Enemy on death (see enemy.gd's _on_died()).
 func reward_kill() -> void:
-	if _is_dead:
+	restore_time(kill_reward)
+
+func restore_time(amount: float) -> void:
+	if _is_dead or amount <= 0.0:
 		return
-	current = minf(current + kill_reward, max_time)
+	current = minf(current + amount, max_time)
 	health_changed.emit(current, max_time)
 
 func _drain(amount: float) -> void:

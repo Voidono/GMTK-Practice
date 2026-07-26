@@ -24,6 +24,7 @@ var last_movement_direction: Vector2 = Vector2.RIGHT
 ## from movement on purpose: you can strafe one way while facing/
 ## attacking another, same as most top-down action games.
 var aim_direction: Vector2 = Vector2.RIGHT
+var is_dashing := false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -35,7 +36,7 @@ func _ready() -> void:
 ## Duck-typed entry point enemy attacks call, same pattern as
 ## Enemy.take_damage() forwarding to its own Health component.
 func take_damage(amount: int) -> void:
-	if health:
+	if health and not is_dashing:
 		health.take_damage(amount)
 
 ## Called by Enemy on death (see enemy.gd's _on_died()) - killing
@@ -43,6 +44,13 @@ func take_damage(amount: int) -> void:
 func on_enemy_killed() -> void:
 	if health:
 		health.reward_kill()
+
+func collect_soul(value: float) -> void:
+	if health:
+		health.restore_time(value)
+
+func set_dashing(active: bool) -> void:
+	is_dashing = active
 
 func _on_died() -> void:
 	# No game-over/respawn flow built yet - this is just the hook.

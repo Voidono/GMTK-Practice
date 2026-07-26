@@ -21,7 +21,7 @@ collision_layer = 4
 collision_mask = 1
 script = ExtResource("1_script")
 speed = 180.0
-damage = 12
+damage = 16
 lifetime = 1.8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

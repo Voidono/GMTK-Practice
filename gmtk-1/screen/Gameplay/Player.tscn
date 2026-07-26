@@ -39,41 +39,15 @@
 [ext_resource type="Texture2D" uid="uid://cselx611uqqm0" path="res://res/image/Sword_susEF4.png" id="33_ef_4"]
 [ext_resource type="PackedScene" uid="uid://drkrru4pxmb1w" path="res://screen/Gameplay/TimeSlowAbility.tscn" id="34_time_slow"]
 [ext_resource type="Script" uid="uid://pjmjln2c76td" path="res://script/State/CountdownHealth.gd" id="39_a243s"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect1.png" id="40_dash_1"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect2.png" id="41_dash_2"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect3.png" id="42_dash_3"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect4.png" id="43_dash_4"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect5.png" id="44_dash_5"]
-[ext_resource type="Texture2D" path="res://res/image/Dash_effect6.png" id="45_dash_6"]
+[ext_resource type="Texture2D" uid="uid://dyidkncnhmymd" path="res://res/image/Dash_effect1.png" id="40_dash_1"]
+[ext_resource type="Texture2D" uid="uid://cgfgqu7hkpyjt" path="res://res/image/Dash_effect2.png" id="41_dash_2"]
+[ext_resource type="Texture2D" uid="uid://emswr7f01407" path="res://res/image/Dash_effect3.png" id="42_dash_3"]
+[ext_resource type="Texture2D" uid="uid://b8llmakvd0cm3" path="res://res/image/Dash_effect4.png" id="43_dash_4"]
+[ext_resource type="Texture2D" uid="uid://wuqxop3cq88y" path="res://res/image/Dash_effect5.png" id="44_dash_5"]
+[ext_resource type="Texture2D" uid="uid://dfihekri5ykk2" path="res://res/image/Dash_effect6.png" id="45_dash_6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wrgo"]
 radius = 17.117243
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dash_effect"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("40_dash_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_dash_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_dash_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_dash_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_dash_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_dash_6")
-}],
-"loop": 0,
-"name": &"dash",
-"speed": 24.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slash_effect"]
 animations = [{
@@ -175,7 +149,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"slash_time_stop_2",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -195,7 +169,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"slash_time_stop_3",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peaon"]
@@ -317,6 +291,32 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dash_effect"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_dash_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dash_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dash_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dash_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dash_6")
+}],
+"loop": 0,
+"name": &"dash",
+"speed": 24.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=775815707 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_i3kcc")
@@ -344,6 +344,8 @@ dashing_state = NodePath("../Dashing")
 script = ExtResource("4_3dh33")
 player = NodePath("../..")
 combat_state = NodePath("../Combat")
+dash_speed = 650.0
+dash_cooldown = 0.45
 
 [node name="WeaponPoint" type="Marker2D" parent="." unique_id=318796674]
 script = ExtResource("6_hi50c")
@@ -351,7 +353,8 @@ hitbox_scene = ExtResource("7_ahu3t")
 
 [node name="Sword" type="Sprite2D" parent="WeaponPoint" unique_id=57710878]
 z_index = 1
-position = Vector2(29, -29)
+position = Vector2(40, -0.9999981)
+rotation = 0.76953316
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("14_sword")
 
@@ -369,7 +372,7 @@ animation = &"slash_time_stop_3"
 sprite_frames = SubResource("SpriteFrames_3dh33")
 animation = &"walk"
 
-[node name="DashEffect" type="AnimatedSprite2D" parent="."]
+[node name="DashEffect" type="AnimatedSprite2D" parent="." unique_id=258647597]
 visible = false
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_dash_effect")
@@ -379,6 +382,9 @@ animation = &"dash"
 
 [node name="CountdownHealth" type="Node" parent="." unique_id=1876108261 node_paths=PackedStringArray("time_slow_ability")]
 script = ExtResource("39_a243s")
+max_time = 75.0
+passive_drain_rate = 0.75
+ability_use_penalty = 2.25
 time_slow_ability = NodePath("../TimeSlowAbility")
 metadata/_custom_type_script = "uid://pjmjln2c76td"
 

@@ -1,6 +1,8 @@
 class_name Enemy
 extends CharacterBody2D
 
+const SOUL_PICKUP_SCENE := preload("res://screen/Gameplay/SoulPickup.tscn")
+
 @export var health: Health
 @export var move_speed: float = 40.0
 @export var melee_range: float = 32.0
@@ -15,6 +17,7 @@ extends CharacterBody2D
 @export var knockback_distance: float = 22.0
 @export var knockback_duration: float = 0.14
 @export var hit_animation_duration: float = 0.30
+@export var soul_value: float = 7.0
 
 @onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var _melee_timer := 0.0
@@ -139,7 +142,14 @@ func _start_hit_reaction() -> void:
 			_knockback_velocity = direction * knockback_distance / knockback_duration
 
 func _on_died() -> void:
-	var player := get_tree().get_first_node_in_group("player")
-	if player and player.has_method("on_enemy_killed"):
-		player.on_enemy_killed()
+	_drop_soul()
 	queue_free()
+
+func _drop_soul() -> void:
+	if soul_value <= 0.0:
+		return
+	var soul := SOUL_PICKUP_SCENE.instantiate() as Node2D
+	get_tree().current_scene.add_child(soul)
+	soul.global_position = global_position
+	if soul.has_method("setup"):
+		soul.setup(soul_value)

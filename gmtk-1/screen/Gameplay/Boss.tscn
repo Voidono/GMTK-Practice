@@ -87,14 +87,16 @@ radius = 34.0
 collision_layer = 2
 script = ExtResource("1_enemy")
 health = NodePath("Health")
-move_speed = 26.0
-melee_range = 50.0
-melee_damage = 18
-melee_cooldown = 1.2
+move_speed = 38.0
+melee_range = 55.0
+melee_damage = 22
+melee_cooldown = 0.85
 is_boss = true
 projectile_scene = ExtResource("7_projectile")
 spawned_slime_scene = ExtResource("8_slime")
-projectile_range = 300.0
+projectile_range = 320.0
+projectile_cooldown = 1.7
+soul_value = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1197006185]
 sprite_frames = SubResource("SpriteFrames_boss")
@@ -103,7 +105,7 @@ autoplay = "Move"
 
 [node name="Health" type="Node" parent="." unique_id=303259417]
 script = ExtResource("2_health")
-max_health = 300
+max_health = 420
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=551012595]
 shape = SubResource("CircleShape_boss")
