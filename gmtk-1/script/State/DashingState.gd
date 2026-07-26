@@ -40,6 +40,7 @@ func enter() -> void:
 	_timer = dash_duration
 	_direction = player.last_movement_direction
 	_cooldown_remaining = dash_cooldown
+	player.play_dash_effect(_direction)
 
 func physics_update(delta: float) -> void:
 	if not player:

@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://6frgr86rcn0q" path="res://res/Slime/attack/slime attack6.png" id="8_1wlbo"]
 [ext_resource type="Texture2D" uid="uid://dtofl3snbhkgt" path="res://res/Slime/idle/Slime6.png" id="8_aoklt"]
 [ext_resource type="Texture2D" uid="uid://dfx27hm423gpg" path="res://res/Slime/idle/Slime8.png" id="9_330fc"]
+[ext_resource type="Script" uid="uid://bupyyw5hqi64s" path="res://script/State/AttackState.gd" id="20_3hhui"]
+[ext_resource type="Texture2D" path="res://res/image/Slime_sus1.png" id="21_damaged_1"]
+[ext_resource type="Texture2D" path="res://res/image/Slime_sus2.png" id="22_damaged_2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wrgo"]
 animations = [{
@@ -47,6 +50,17 @@ animations = [{
 "loop": 1,
 "name": &"Attack",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_damaged_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_damaged_2")
+}],
+"loop": 1,
+"name": &"Damaged",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -103,16 +117,19 @@ max_health = 50
 script = ExtResource("4_bm7jt")
 enemy = NodePath("../..")
 
+[node name="AttackState" type="Node" parent="StateMachine" unique_id=34372283]
+script = ExtResource("20_3hhui")
+metadata/_custom_type_script = "uid://bupyyw5hqi64s"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183801359]
 position = Vector2(-2, 10)
 shape = SubResource("CircleShape2D_15eay")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1243340232]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
-monitorable = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1994509289]
 position = Vector2(-2, 10)
 shape = SubResource("CircleShape2D_15eay")

@@ -2,7 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://dflhb72afu7e3" path="res://screen/Gameplay/Player.tscn" id="1_s0hea"]
 [ext_resource type="Script" uid="uid://b4k2gyab62s6v" path="res://script/EnemySpawner.gd" id="2_146xj"]
-[ext_resource type="PackedScene" uid="uid://bgt32moobadj8" path="res://screen/Gameplay/Enemy.tscn" id="3_34q7t"]
+[ext_resource type="PackedScene" uid="uid://du62jb4wgyte8" path="res://screen/Gameplay/Slime.tscn" id="4_slime"]
+[ext_resource type="PackedScene" uid="uid://di5f06y3c085k" path="res://screen/Gameplay/Badger.tscn" id="5_badger"]
+[ext_resource type="PackedScene" uid="uid://cl8m8ffsrlycf" path="res://screen/Gameplay/Boss.tscn" id="6_boss"]
+[ext_resource type="Script" uid="uid://bhvui4kphy2ww" path="res://script/TimeBarUI.gd" id="7_time_bar_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_time_background"]
+bg_color = Color(0.015, 0.04, 0.08, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_time_fill"]
+bg_color = Color(0.08, 0.6, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Node2D" type="Node2D" unique_id=1976260712]
 
@@ -11,4 +28,44 @@ position = Vector2(203, 140)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1699710776]
 script = ExtResource("2_146xj")
-enemy_scene = ExtResource("3_34q7t")
+enemy_scene = ExtResource("4_slime")
+
+[node name="Badger" parent="." unique_id=1352991676 instance=ExtResource("5_badger")]
+position = Vector2(500, 180)
+
+[node name="Boss" parent="." unique_id=882568695 instance=ExtResource("6_boss")]
+position = Vector2(620, 360)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=206222732]
+
+[node name="TimeBarUI" type="Control" parent="UI" unique_id=139694170]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_right = 184.0
+offset_bottom = 42.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("7_time_bar_script")
+
+[node name="TimeBar" type="ProgressBar" parent="UI/TimeBarUI" unique_id=647219715]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 366.0
+offset_bottom = 22.0
+theme_override_styles/background = SubResource("StyleBoxFlat_time_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_time_fill")
+show_percentage = false
+
+[node name="TimeLabel" type="Label" parent="UI/TimeBarUI" unique_id=934403357]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 25.0
+offset_right = 240.0
+offset_bottom = 42.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+horizontal_alignment = 1

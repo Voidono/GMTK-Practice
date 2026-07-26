@@ -23,10 +23,7 @@ var _attack_in_progress := false
 
 func set_time_stop_active(active: bool) -> void:
 	_time_stop_active = active
-	if slash_effect:
-		# AnimatedSprite2D is normally slowed by Engine.time_scale. Offset it
-		# so sword swings always finish in the same real-world duration.
-		slash_effect.speed_scale = 1.0 / Engine.time_scale if active and Engine.time_scale > 0.0 else 1.0
+	_set_effect_real_time_speed()
 
 func swing(direction: Vector2) -> bool:
 	if _attack_in_progress:
@@ -56,10 +53,17 @@ func _play_slash_effect(combo_step: int) -> void:
 		return
 	
 	_attack_in_progress = true
+	_set_effect_real_time_speed()
 	slash_effect.show()
 	var animation_name := StringName("slash_time_stop_%d" % combo_step) if _time_stop_active else StringName("slash_%d" % combo_step)
 	slash_effect.play(animation_name)
 	sword.hide()
+
+func _set_effect_real_time_speed() -> void:
+	if slash_effect:
+		# Reapply before every swing so the final EF combo never inherits
+		# the slowed global time scale.
+		slash_effect.speed_scale = 1.0 / Engine.time_scale if _time_stop_active and Engine.time_scale > 0.0 else 1.0
 
 func _on_slash_effect_animation_finished() -> void:
 	_attack_in_progress = false

@@ -38,9 +38,42 @@
 [ext_resource type="Texture2D" uid="uid://e1fe7w2e0frd" path="res://res/image/SworldEF5.png" id="33_5047w"]
 [ext_resource type="Texture2D" uid="uid://cselx611uqqm0" path="res://res/image/Sword_susEF4.png" id="33_ef_4"]
 [ext_resource type="PackedScene" uid="uid://drkrru4pxmb1w" path="res://screen/Gameplay/TimeSlowAbility.tscn" id="34_time_slow"]
+[ext_resource type="Script" uid="uid://pjmjln2c76td" path="res://script/State/CountdownHealth.gd" id="39_a243s"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect1.png" id="40_dash_1"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect2.png" id="41_dash_2"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect3.png" id="42_dash_3"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect4.png" id="43_dash_4"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect5.png" id="44_dash_5"]
+[ext_resource type="Texture2D" path="res://res/image/Dash_effect6.png" id="45_dash_6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wrgo"]
 radius = 17.117243
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dash_effect"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_dash_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dash_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dash_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dash_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dash_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dash_6")
+}],
+"loop": 0,
+"name": &"dash",
+"speed": 24.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_slash_effect"]
 animations = [{
@@ -287,6 +320,7 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=775815707 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_i3kcc")
+health = NodePath("CountdownHealth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370688901]
 position = Vector2(1, -3)
@@ -335,6 +369,18 @@ animation = &"slash_time_stop_3"
 sprite_frames = SubResource("SpriteFrames_3dh33")
 animation = &"walk"
 
+[node name="DashEffect" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_dash_effect")
+animation = &"dash"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=616917517]
 
+[node name="CountdownHealth" type="Node" parent="." unique_id=1876108261 node_paths=PackedStringArray("time_slow_ability")]
+script = ExtResource("39_a243s")
+time_slow_ability = NodePath("../TimeSlowAbility")
+metadata/_custom_type_script = "uid://pjmjln2c76td"
+
 [connection signal="animation_finished" from="WeaponPoint/SlashEffect" to="WeaponPoint" method="_on_slash_effect_animation_finished"]
+[connection signal="animation_finished" from="DashEffect" to="DashEffect" method="hide"]

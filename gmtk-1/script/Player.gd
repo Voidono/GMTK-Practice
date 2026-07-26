@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var animation_player := $AnimationPlayer
 @onready var weapon_point: Marker2D = $WeaponPoint
 @onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dash_effect: AnimatedSprite2D = $DashEffect
+@export var health: CountdownHealth
 ## Raw WASD input this frame - can be Vector2.ZERO when standing still.
 var input_vector: Vector2 = Vector2.ZERO
 
@@ -25,7 +27,27 @@ var aim_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	add_to_group("player")
+	if health:
+		health.died.connect(_on_died)
+	else:
+		push_error("Player: 'Health' field is unassigned in the Inspector - enemies can't damage you.")
 
+## Duck-typed entry point enemy attacks call, same pattern as
+## Enemy.take_damage() forwarding to its own Health component.
+func take_damage(amount: int) -> void:
+	if health:
+		health.take_damage(amount)
+
+## Called by Enemy on death (see enemy.gd's _on_died()) - killing
+## enemies is the only way to buy back time.
+func on_enemy_killed() -> void:
+	if health:
+		health.reward_kill()
+
+func _on_died() -> void:
+	# No game-over/respawn flow built yet - this is just the hook.
+	# Wire whatever you want here: reload the scene, show a menu, etc.
+	push_warning("Player died - no game-over flow implemented yet.")
 func _physics_process(_delta: float) -> void:
 	input_vector = Input.get_vector("right", "left", "up", "down")
 	if input_vector.length() > 0.0:
@@ -66,3 +88,11 @@ func move(desired_velocity: Vector2) -> void:
 ## as move() above.
 func get_real_delta(scaled_delta: float) -> float:
 	return scaled_delta / Engine.time_scale if Engine.time_scale > 0.0 else scaled_delta
+
+func play_dash_effect(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		return
+	dash_effect.position = -direction.normalized() * 18.0
+	dash_effect.rotation = direction.angle()
+	dash_effect.show()
+	dash_effect.play(&"dash")
