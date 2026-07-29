@@ -344,9 +344,6 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=775815707 node_paths=PackedStringArray("health") groups=["player"]]
-# Player body (layer 1) intentionally has no enemy-body mask. Combat uses
-# attack/hurt Areas below, so enemies can overlap this body without blocking movement.
-collision_mask = 0
 script = ExtResource("1_i3kcc")
 health = NodePath("CountdownHealth")
 
@@ -354,10 +351,10 @@ health = NodePath("CountdownHealth")
 position = Vector2(1, -3)
 shape = SubResource("CircleShape2D_4wrgo")
 
-[node name="GameBackground" type="Polygon2D" parent="."]
+[node name="GameBackground" type="Polygon2D" parent="." unique_id=1025170383]
 z_index = -100
-polygon = PackedVector2Array(-2000, -2000, 2000, -2000, 2000, 2000, -2000, 2000)
 color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2000, -2000, 2000, -2000, 2000, 2000, -2000, 2000)
 
 [node name="Targeting" type="Node2D" parent="." unique_id=190316023]
 script = ExtResource("12_c2qy3")
