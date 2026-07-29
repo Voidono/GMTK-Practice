@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wkr05mgoqtu6"]
 
 [ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="1_njd6i"]
+[ext_resource type="Script" uid="uid://cmgsmw5d4vch0" path="res://script/h_separator.gd" id="2_nf63h"]
 [ext_resource type="Texture2D" uid="uid://c4a4br6ok8m5r" path="res://res/texture 1/Game UI Assets/Button/Button icon/exit.png" id="2_wie8f"]
 [ext_resource type="Script" uid="uid://b7lu7sjb177nh" path="res://script/button.gd" id="3_08qjp"]
 
@@ -25,7 +26,7 @@ position = Vector2(495, 282)
 scale = Vector2(2.6386137, 2.638614)
 texture = ExtResource("1_njd6i")
 
-[node name="HSeparator" type="HSlider" parent="CanvasLayer" unique_id=2127810322]
+[node name="HSlider" type="HSlider" parent="CanvasLayer" unique_id=2127810322]
 offset_left = 419.0
 offset_top = 164.0
 offset_right = 697.0
@@ -33,8 +34,9 @@ offset_bottom = 285.0
 max_value = 1.0
 step = 0.001
 value = 1.0
+script = ExtResource("2_nf63h")
 
-[node name="Label" type="Label" parent="CanvasLayer/HSeparator" unique_id=1885529811]
+[node name="Label" type="Label" parent="CanvasLayer/HSlider" unique_id=1885529811]
 layout_mode = 0
 offset_left = -225.0
 offset_top = 2.0
@@ -83,4 +85,5 @@ offset_bottom = 37.499973
 flat = true
 script = ExtResource("3_08qjp")
 
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="CanvasLayer/HSlider" method="_on_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Exit/Button" to="CanvasLayer/Exit/Button" method="_on_pressed"]

@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://dvnlcxhckcc4q"
 
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 AudioManager="*res://script/AudioManager.gd"
+Setting="*uid://dfgtw5rik8fcc"
 
 [display]
 

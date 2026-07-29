@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://crp6bfh4omp3d" path="res://res/image/codarkdarkbruhbruhlmao.png" id="2_v7uw0"]
 [ext_resource type="Texture2D" uid="uid://cwm1fbrreb1eh" path="res://res/texture 1/Game UI Assets/Button/Button text/9patch - red.png" id="3_at1li"]
 [ext_resource type="Texture2D" uid="uid://8lck186mmehs" path="res://res/Ninja Adventure - Asset Pack/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_xtfch"]
+[ext_resource type="FontFile" uid="uid://dbem2f7olev3p" path="res://magofonts/mago2.ttf" id="7_v7uw0"]
 [ext_resource type="Texture2D" uid="uid://c673vv663t5cy" path="res://res/image/Untitled_7-c203.png" id="7_xtfch"]
-[ext_resource type="Script" uid="uid://bkmhgikdpi7md" path="res://script/animated_sprite_2d.gd" id="8_xtfch"]
+[ext_resource type="Script" uid="uid://dy32hj8vvl8b7" path="res://script/animated_sprite_2d.gd" id="8_xtfch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41p4x"]
 texture = ExtResource("2_v7uw0")
@@ -649,6 +650,7 @@ offset_left = 92.0
 offset_top = -27.0
 offset_right = 880.0
 offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("7_v7uw0")
 theme_override_font_sizes/font_size = 200
 text = "ChronoSlasher"
 
