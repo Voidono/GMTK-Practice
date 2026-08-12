@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://p00bjikqkt2v"]
+
+[ext_resource type="Script" uid="uid://qxbds5jxayur" path="res://script/Mobile Autoload/ControlScheme.gd" id="1_5s15l"]
+
+[node name="ControlScheme" type="Node" unique_id=620696637]
+script = ExtResource("1_5s15l")

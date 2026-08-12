@@ -14,6 +14,7 @@ const LOSE_SCREEN_SCENE := "res://screen/layer screen/lose_screen.tscn"
 @onready var weapon_point: Marker2D = $WeaponPoint
 @onready var character_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_effect: AnimatedSprite2D = $DashEffect
+@onready var targeting: Targeting = $Targeting
 @export var health: CountdownHealth
 ## Raw WASD input this frame - can be Vector2.ZERO when standing still.
 var input_vector: Vector2 = Vector2.ZERO
@@ -71,7 +72,10 @@ func _physics_process(_delta: float) -> void:
 		AudioManager.play_player_step(global_position)
 		_step_cooldown = 0.34
 
-	aim_direction = (get_global_mouse_position() - global_position).normalized()
+	if ControlScheme.is_touch and targeting and is_instance_valid(targeting.current_target):
+		aim_direction = (targeting.current_target.global_position - global_position).normalized()
+	else:
+		aim_direction = (get_global_mouse_position() - global_position).normalized()
 	if aim_direction != Vector2.ZERO:
 		weapon_point.rotation = aim_direction.angle()
 

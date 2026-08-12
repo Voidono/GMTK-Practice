@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cl8m8ffsrlycf" path="res://screen/Gameplay/Boss.tscn" id="6_boss"]
 [ext_resource type="Script" uid="uid://bhvui4kphy2ww" path="res://script/TimeBarUI.gd" id="7_time_bar_script"]
 [ext_resource type="Script" uid="uid://ct5il5x0gx7al" path="res://script/MatchTimerUI.gd" id="8_match_timer_script"]
+[ext_resource type="Script" uid="uid://d2bl34n6ixmi4" path="res://script/Mobile Autoload/TouchControlhud.gd" id="10_touch_hud"]
+[ext_resource type="Script" uid="uid://cq76gsnv338wi" path="res://script/Mobile Autoload/TouchButton.gd" id="11_touch_button"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_time_background"]
 bg_color = Color(0.015, 0.04, 0.08, 1)
@@ -82,6 +84,80 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 20
 text = "BOSS IN 05:00"
 script = ExtResource("8_match_timer_script")
+
+[node name="MobileControls" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("10_touch_hud")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="MobileControls"]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -152.0
+offset_right = 152.0
+offset_bottom = -24.0
+grow_vertical = 0
+mouse_filter = 2
+action_up = &"up"
+action_down = &"down"
+# The project's existing horizontal actions are named in reverse:
+# "right" is bound to A and "left" to D. Preserve that input map.
+action_left = &"right"
+action_right = &"left"
+joystick_size = 128.0
+tip_size = 48.0
+deadzone_ratio = 0.15
+
+[node name="SlashButton" type="Control" parent="MobileControls"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -136.0
+offset_right = -24.0
+offset_bottom = -24.0
+mouse_filter = 2
+script = ExtResource("11_touch_button")
+action_name = &"slash"
+label_text = "SLASH"
+idle_color = Color(0.88, 0.2, 0.25, 0.35)
+pressed_color = Color(1, 0.35, 0.4, 0.7)
+
+[node name="DashButton" type="Control" parent="MobileControls"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -118.0
+offset_right = -146.0
+offset_bottom = -6.0
+mouse_filter = 2
+script = ExtResource("11_touch_button")
+action_name = &"dash"
+label_text = "DASH"
+idle_color = Color(0.18, 0.62, 1, 0.35)
+pressed_color = Color(0.3, 0.75, 1, 0.7)
+
+[node name="SlowButton" type="Control" parent="MobileControls"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -258.0
+offset_right = -24.0
+offset_bottom = -146.0
+mouse_filter = 2
+script = ExtResource("11_touch_button")
+action_name = &"time_slow"
+label_text = "SLOW"
+idle_color = Color(0.55, 0.25, 1, 0.35)
+pressed_color = Color(0.7, 0.4, 1, 0.7)
 
 [node name="Boss" parent="." unique_id=536690979 instance=ExtResource("6_boss")]
 position = Vector2(490, 330)
