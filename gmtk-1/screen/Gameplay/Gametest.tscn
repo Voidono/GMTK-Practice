@@ -33,7 +33,6 @@ collision_mask = 2
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1699710776]
 script = ExtResource("2_146xj")
 enemy_scene = ExtResource("4_slime")
-boss_scene = ExtResource("6_boss")
 
 [node name="Badger" parent="." unique_id=1352991676 instance=ExtResource("5_badger")]
 position = Vector2(500, 180)

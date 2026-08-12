@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://dvnlcxhckcc4q"
 AudioManager="*res://script/AudioManager.gd"
 Setting="*uid://dfgtw5rik8fcc"
 ControlScheme="*uid://p00bjikqkt2v"
+DebugTools="*res://script/DebugTools.gd"
 
 [display]
 

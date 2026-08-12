@@ -2,16 +2,16 @@ class_name MatchTimerUI
 extends Label
 
 func _ready() -> void:
-	call_deferred("_bind_to_spawner")
+	call_deferred("_bind_to_director")
 
-func _bind_to_spawner() -> void:
-	var spawner := get_tree().get_first_node_in_group("enemy_spawner") as EnemySpawner
-	if not spawner:
-		push_warning("MatchTimerUI: no EnemySpawner was found.")
+func _bind_to_director() -> void:
+	var director := get_tree().get_first_node_in_group("match_director") as MatchDirector
+	if not director:
+		visible = false
 		return
-	spawner.match_time_changed.connect(_on_match_time_changed)
-	spawner.boss_spawned.connect(_on_boss_spawned)
-	_on_match_time_changed(spawner.match_elapsed, spawner.boss_spawn_delay)
+	director.match_time_changed.connect(_on_match_time_changed)
+	director.boss_spawned.connect(_on_boss_spawned)
+	_on_match_time_changed(director.match_elapsed, director.boss_spawn_delay)
 
 func _on_match_time_changed(elapsed: float, duration: float) -> void:
 	var remaining := maxf(duration - elapsed, 0.0)

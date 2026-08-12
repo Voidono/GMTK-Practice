@@ -34,6 +34,8 @@ func _handle_touch(event: InputEventScreenTouch) -> void:
 		if from_center.length() <= radius:
 			_touch_index = event.index
 			_is_pressed = true
+			if action_name == &"slash" or action_name == &"dash":
+				ControlScheme.request_mobile_action(action_name)
 			Input.action_press(action_name)
 			queue_redraw()
 	elif event.index == _touch_index:

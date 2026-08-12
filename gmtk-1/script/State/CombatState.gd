@@ -29,12 +29,14 @@ func physics_update(_delta: float) -> void:
 
 	player.move(player.input_vector * player.speed)
 
-	if Input.is_action_just_pressed(slash_action):
+	var wants_slash := ControlScheme.consume_mobile_action(slash_action) if ControlScheme.is_touch else Input.is_action_just_pressed(slash_action)
+	var wants_dash := ControlScheme.consume_mobile_action(dash_action) if ControlScheme.is_touch else Input.is_action_just_pressed(dash_action)
+	if wants_slash:
 		if slash_weapon:
 			slash_weapon.swing(player.aim_direction)
 		else:
 			push_warning("CombatState: slash pressed but 'Slash Weapon' field is unassigned - nothing happens.")
-	elif Input.is_action_just_pressed(dash_action):
+	elif wants_dash:
 		if not dashing_state:
 			push_warning("CombatState: dash pressed but 'Dashing State' field is unassigned - nothing happens.")
 		elif dashing_state.can_dash():

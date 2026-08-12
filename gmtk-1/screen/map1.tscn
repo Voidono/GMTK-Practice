@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cl8m8ffsrlycf" path="res://screen/Gameplay/Boss.tscn" id="8_boss"]
 [ext_resource type="Script" uid="uid://bhvui4kphy2ww" path="res://script/TimeBarUI.gd" id="9_time_bar"]
 [ext_resource type="Script" uid="uid://ct5il5x0gx7al" path="res://script/MatchTimerUI.gd" id="10_match_timer"]
+[ext_resource type="PackedScene" uid="uid://di5f06y3c085k" path="res://screen/Gameplay/Badger.tscn" id="11_badger"]
+[ext_resource type="Script" uid="uid://cib0po7rdtndu" path="res://script/MatchDirector.gd" id="12_match_director"]
+[ext_resource type="Script" uid="uid://d2bl34n6ixmi4" path="res://script/Mobile Autoload/TouchControlhud.gd" id="13_touch_hud"]
+[ext_resource type="Script" uid="uid://cq76gsnv338wi" path="res://script/Mobile Autoload/TouchButton.gd" id="14_touch_button"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhd4t"]
 texture = ExtResource("1_4taed")
@@ -971,8 +975,101 @@ position = Vector2(1, -7)
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=211394825]
 script = ExtResource("6_spawner")
 enemy_scene = ExtResource("7_slime")
-boss_scene = ExtResource("8_boss")
 max_enemies = 30
+
+[node name="BadgerSpawner" type="Node2D" parent="." unique_id=1610553613]
+script = ExtResource("6_spawner")
+enemy_scene = ExtResource("11_badger")
+spawn_start_delay = 60.0
+spawn_interval = 12.0
+minimum_spawn_interval = 12.0
+max_enemies = 1
+max_enemy_growth_per_minute = 0
+initial_spawn_count = 0
+
+[node name="MatchDirector" type="Node" parent="." unique_id=694279840]
+script = ExtResource("12_match_director")
+boss_scene = ExtResource("8_boss")
+
+[node name="MobileControls" type="CanvasLayer" parent="." unique_id=1991584362]
+layer = 2
+script = ExtResource("13_touch_hud")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="MobileControls" unique_id=949017788]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 792.0
+offset_top = 361.0
+offset_right = 954.0
+offset_bottom = -7.0
+grow_vertical = 2
+joystick_size = 128.0
+tip_size = 48.0
+deadzone_ratio = 0.15
+action_left = &"right"
+action_right = &"left"
+action_up = &"up"
+action_down = &"down"
+
+[node name="SlashButton" type="Control" parent="MobileControls" unique_id=1682350626]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -774.0
+offset_top = -134.0
+offset_right = -662.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("14_touch_button")
+action_name = &"slash"
+label_text = "SLASH"
+idle_color = Color(0.88, 0.2, 0.25, 0.35)
+pressed_color = Color(1, 0.35, 0.4, 0.7)
+
+[node name="DashButton" type="Control" parent="MobileControls" unique_id=1217117969]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -950.0
+offset_top = -122.0
+offset_right = -838.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("14_touch_button")
+action_name = &"dash"
+label_text = "DASH"
+idle_color = Color(0.18, 0.62, 1, 0.35)
+pressed_color = Color(0.3, 0.75, 1, 0.7)
+
+[node name="SlowButton" type="Control" parent="MobileControls" unique_id=14576242]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -851.0
+offset_top = -237.0
+offset_right = -739.0
+offset_bottom = -125.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("14_touch_button")
+action_name = &"time_slow"
+label_text = "SLOW"
+idle_color = Color(0.55, 0.25, 1, 0.35)
+pressed_color = Color(0.7, 0.4, 1, 0.7)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=211394826]
 
@@ -1017,5 +1114,5 @@ offset_bottom = 38.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 38
-text = "BOSS IN 05:00"
+text = "BOSS IN 03:00"
 script = ExtResource("10_match_timer")
